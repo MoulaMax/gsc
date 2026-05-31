@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GSC Copronet — Propreté & multiservices à Avignon depuis 1980</title>
+  <meta name="description" content="GSC Copronet, entreprise familiale de propreté et multiservices à Avignon. 45 ans d'expertise au service des copropriétés, commerces, industries et collectivités du Vaucluse." />
+  <meta name="theme-color" content="#0E2A20" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============== NAV ============== -->
+  <header class="nav" data-nav>
+    <div class="container nav__inner">
+      <a href="#top" class="nav__logo" aria-label="GSC Copronet — Accueil">
+        <span class="nav__logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 156 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 44 C54 56 116 53 152 12 C124 35 70 43 6 44 Z" fill="#F4C20E"/>
+            <text x="0" y="37" font-family="'Inter Tight','Inter',sans-serif" font-size="40" font-weight="800" letter-spacing="-2.5" fill="currentColor">GSC</text>
+          </svg>
+        </span>
+        <span class="nav__logo-text">Copronet</span>
+      </a>
+
+      <nav class="nav__menu" aria-label="Navigation principale">
+        <a href="#services">Services</a>
+        <a href="#secteurs">Secteurs</a>
+        <a href="#engagements">Engagements</a>
+        <a href="#histoire">Histoire</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav__actions">
+        <a href="tel:+33490800505" class="nav__phone" aria-label="Téléphone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span>04 90 80 05 05</span>
+        </a>
+        <a href="#devis" class="btn btn--primary nav__cta">Devis gratuit</a>
+        <button class="nav__toggle" type="button" aria-label="Ouvrir le menu" data-menu-toggle>
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============== HERO ============== -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__blob hero__blob--1"></div>
+        <div class="hero__blob hero__blob--2"></div>
+        <div class="hero__blob hero__blob--3"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="eyebrow" data-reveal>
+            <span class="eyebrow__dot"></span>
+            Avignon · Vaucluse · Depuis 1980
+          </span>
+
+          <h1 class="hero__title" data-reveal>
+            L'art de la <em>propreté</em>,<br/>
+            depuis bientôt cinquante ans.
+          </h1>
+
+          <p class="hero__lead" data-reveal>
+            GSC Copronet entretient vos parties communes, bureaux, commerces et locaux techniques avec une exigence rare — celle d'une entreprise familiale qui connaît chaque immeuble du Vaucluse par son prénom.
+          </p>
+
+          <div class="hero__ctas" data-reveal>
+            <a href="#devis" class="btn btn--primary btn--lg">
+              Demander un devis
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="#services" class="btn btn--ghost btn--lg">Voir nos services</a>
+          </div>
+
+          <dl class="hero__stats" data-reveal>
+            <div>
+              <dt>45</dt>
+              <dd>années d'expérience</dd>
+            </div>
+            <div>
+              <dt>35<span>+</span></dt>
+              <dd>collaborateurs formés</dd>
+            </div>
+            <div>
+              <dt>100<span>%</span></dt>
+              <dd>basé en Vaucluse</dd>
+            </div>
+          </dl>
+        </div>
+
+        <aside class="hero__card" data-reveal aria-label="Coordonnées rapides">
+          <div class="hero__card-top">
+            <span class="hero__card-eyebrow">Visite des locaux</span>
+            <span class="hero__card-status">
+              <span class="hero__card-status-dot"></span>
+              Ouvert ce matin
+            </span>
+          </div>
+
+          <a class="hero__card-figure"
+             href="https://www.google.com/maps?ftid=0x12b5ec472948362d:0x7155cd986455d924"
+             target="_blank" rel="noopener"
+             aria-label="Voir les locaux GSC Copronet sur Google Maps">
+            <img src="assets/locaux-gsc.jpg" width="461" height="200" loading="lazy"
+                 alt="Façade des locaux GSC Copronet, 13 av. de l'Orme Fourchu à Avignon" />
+            <span class="hero__card-figure-overlay">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              Voir sur Google Maps
+            </span>
+          </a>
+
+          <div class="hero__card-info">
+            <p class="hero__card-label">Siège</p>
+            <p class="hero__card-value">13 av. de l'Orme Fourchu<br/>84000 Avignon</p>
+          </div>
+
+          <div class="hero__card-grid">
+            <div>
+              <p class="hero__card-label">Téléphone</p>
+              <a href="tel:+33490800505" class="hero__card-link">04 90 80 05 05</a>
+            </div>
+            <div>
+              <p class="hero__card-label">Horaires</p>
+              <p class="hero__card-value">Lun – Sam<br/>8h–12h · 14h–18h</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="hero__marquee" aria-hidden="true">
+        <div class="hero__marquee-track">
+          <span>Copropriétés</span><i>✦</i>
+          <span>Cabinets médicaux</span><i>✦</i>
+          <span>Industrie agro-alimentaire</span><i>✦</i>
+          <span>Commerces & boutiques</span><i>✦</i>
+          <span>Bureaux & tertiaire</span><i>✦</i>
+          <span>Collectivités</span><i>✦</i>
+          <span>Copropriétés</span><i>✦</i>
+          <span>Cabinets médicaux</span><i>✦</i>
+          <span>Industrie agro-alimentaire</span><i>✦</i>
+          <span>Commerces & boutiques</span><i>✦</i>
+          <span>Bureaux & tertiaire</span><i>✦</i>
+          <span>Collectivités</span><i>✦</i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== INTRO / ABOUT TEASER ============== -->
+    <section class="intro" id="histoire">
+      <div class="container intro__inner">
+        <div class="intro__col-left">
+          <span class="eyebrow" data-reveal>
+            <span class="eyebrow__dot"></span>
+            Notre histoire
+          </span>
+          <h2 class="section-title" data-reveal>
+            Une entreprise <em>familiale</em>,<br/>
+            une exigence qui se transmet.
+          </h2>
+        </div>
+        <div class="intro__col-right" data-reveal>
+          <p>
+            En 1998, Agnès et Yvon Arnaud fondent GSC Copronet à Avignon avec une idée simple : faire du nettoyage un vrai métier, exercé par des équipes formées, fidèles, et fières de leur travail.
+          </p>
+          <p>
+            Près de trente ans plus tard, nous accompagnons des copropriétés, des cabinets médicaux, des industriels et des collectivités à travers tout le Vaucluse — avec la même attention au détail, et désormais une vraie ambition écologique.
+          </p>
+          <a href="#engagements" class="link-arrow">
+            Découvrir nos engagements
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== SERVICES — BANDEAU PARALLAXE ============== -->
+    <section class="parallax parallax--bright" id="services" data-parallax aria-label="La propreté, sous toutes ses formes">
+      <div class="parallax__bg" aria-hidden="true">
+        <img src="assets/services-parallax.jpg" alt="" width="1800" height="579"
+             loading="lazy" decoding="async" />
+      </div>
+      <div class="parallax__veil" aria-hidden="true"></div>
+      <div class="container parallax__inner">
+        <span class="eyebrow eyebrow--inverse" data-reveal>
+          <span class="eyebrow__dot"></span>
+          Nos services
+        </span>
+        <h2 class="parallax__title" data-reveal>
+          La propreté,<br/>
+          <em>sous toutes ses formes.</em>
+        </h2>
+        <p class="parallax__lead" data-reveal>
+          Un interlocuteur unique pour l'ensemble de vos besoins —
+          du nettoyage régulier au chantier ponctuel.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============== SERVICES ============== -->
+    <section class="services">
+      <div class="container">
+
+        <div class="services__grid">
+
+          <article class="service-card" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="6" y="10" width="20" height="18" rx="1"/>
+                <path d="M6 16h20M11 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3M16 19v6M13 22h6"/>
+              </svg>
+            </div>
+            <h3>Parties communes</h3>
+            <p>Halls, escaliers, ascenseurs, sous-sols, locaux poubelles : un entretien méticuleux pour des résidents bien accueillis chaque matin.</p>
+            <ul>
+              <li>Passages quotidiens ou hebdomadaires</li>
+              <li>Lavage & désinfection</li>
+              <li>Sortie et rentrée des containers</li>
+            </ul>
+          </article>
+
+          <article class="service-card" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 4v24M4 16h24"/>
+                <circle cx="16" cy="16" r="11"/>
+              </svg>
+            </div>
+            <h3>Milieu médical</h3>
+            <p>Cabinets, EHPAD, laboratoires : protocoles bio-nettoyage, traçabilité et personnel formé aux normes d'hygiène hospitalière.</p>
+            <ul>
+              <li>Bio-nettoyage normé</li>
+              <li>Traçabilité des interventions</li>
+              <li>Produits validés</li>
+            </ul>
+          </article>
+
+          <article class="service-card" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 6h16l-2 22H10L8 6z"/>
+                <path d="M12 11h8M13 16h6"/>
+              </svg>
+            </div>
+            <h3>Milieu alimentaire</h3>
+            <p>Cuisines, laboratoires, surfaces de production : hygiène HACCP, dégraissage technique et désinfection complète des zones sensibles.</p>
+            <ul>
+              <li>Normes HACCP</li>
+              <li>Dégraissage haute pression</li>
+              <li>Hottes & conduits</li>
+            </ul>
+          </article>
+
+          <article class="service-card" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="5" width="22" height="22" rx="1"/>
+                <path d="M5 16h22M16 5v22"/>
+              </svg>
+            </div>
+            <h3>Vitrerie</h3>
+            <p>Vitres, verrières, façades, miroirs : un savoir-faire reconnu, des équipements adaptés à toutes les hauteurs et configurations.</p>
+            <ul>
+              <li>Hauteur jusqu'à 12 m</li>
+              <li>Verrières et façades</li>
+              <li>Sans traces, garanti</li>
+            </ul>
+          </article>
+
+          <article class="service-card" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 12l4-4h12l4 4v14H6V12z"/>
+                <path d="M12 26v-6h8v6M10 16h4"/>
+              </svg>
+            </div>
+            <h3>Espaces de vente</h3>
+            <p>Boutiques, showrooms, centres commerciaux : un environnement impeccable, du sol aux vitrines, avant l'ouverture de chaque journée.</p>
+            <ul>
+              <li>Interventions matinales</li>
+              <li>Vitrines & sols spéciaux</li>
+              <li>Discrétion totale</li>
+            </ul>
+          </article>
+
+          <article class="service-card" data-reveal>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 26l8-16 6 12 8-6"/>
+                <circle cx="13" cy="10" r="2"/>
+              </svg>
+            </div>
+            <h3>Remise en état</h3>
+            <p>Fin de chantier, locaux vacants, après sinistre : nous remettons à neuf vos espaces avec rigueur et matériel professionnel.</p>
+            <ul>
+              <li>Après travaux</li>
+              <li>Décapage & cristallisation</li>
+              <li>Restitution clé en main</li>
+            </ul>
+          </article>
+
+        </div>
+
+        <!-- ============ MULTI-SERVICES STRIP ============ -->
+        <div class="multi" data-reveal>
+          <div class="multi__head">
+            <span class="eyebrow eyebrow--inverse">
+              <span class="eyebrow__dot"></span>
+              Au-delà du nettoyage
+            </span>
+            <h3>Multi-services & maintenance immobilière</h3>
+            <p>Une équipe polyvalente, mobilisable à la demande, pour tous les petits travaux qui font la grande différence.</p>
+          </div>
+
+          <div class="multi__grid">
+            <div class="multi__item">
+              <span class="multi__num">01</span>
+              <h4>Maintenance immobilière</h4>
+              <p>Petits travaux d'entretien, plomberie, électricité légère, serrurerie.</p>
+            </div>
+            <div class="multi__item">
+              <span class="multi__num">02</span>
+              <h4>Espaces verts</h4>
+              <p>Tonte, taille, désherbage, entretien des massifs et copropriétés arborées.</p>
+            </div>
+            <div class="multi__item">
+              <span class="multi__num">03</span>
+              <h4>Manutention & transport</h4>
+              <p>Déplacement de charges lourdes, déménagements internes, mise en sécurité.</p>
+            </div>
+            <div class="multi__item">
+              <span class="multi__num">04</span>
+              <h4>Évacuation d'encombrants</h4>
+              <p>Tri sélectif, évacuation en déchèterie, débarras de caves et greniers.</p>
+            </div>
+            <div class="multi__item">
+              <span class="multi__num">05</span>
+              <h4>Services factotum</h4>
+              <p>Petites réparations, montage mobilier, dépannages express.</p>
+            </div>
+            <div class="multi__item">
+              <span class="multi__num">06</span>
+              <h4>Courrier & coursier</h4>
+              <p>Distribution interne, dépôt et acheminement de plis confidentiels.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== SECTEURS ============== -->
+    <section class="sectors" id="secteurs">
+      <div class="container">
+        <header class="section-head section-head--center" data-reveal>
+          <span class="eyebrow">
+            <span class="eyebrow__dot"></span>
+            Secteurs accompagnés
+          </span>
+          <h2 class="section-title">
+            Six univers,<br/>
+            une même <em>exigence</em>.
+          </h2>
+        </header>
+
+        <div class="sectors__grid">
+
+          <article class="sector" data-reveal>
+            <span class="sector__index">→ 01</span>
+            <h3>Copropriétés &<br/>syndics</h3>
+            <p>Le cœur historique de notre métier — résidences, immeubles de standing, ensembles immobiliers.</p>
+          </article>
+
+          <article class="sector" data-reveal>
+            <span class="sector__index">→ 02</span>
+            <h3>Santé &<br/>médico-social</h3>
+            <p>Cabinets, laboratoires, EHPAD, cliniques : un protocole rigoureux pour des lieux sensibles.</p>
+          </article>
+
+          <article class="sector" data-reveal>
+            <span class="sector__index">→ 03</span>
+            <h3>Commerce &<br/>retail</h3>
+            <p>Boutiques, restaurants, hôtels : votre vitrine, prête à accueillir vos clients chaque jour.</p>
+          </article>
+
+          <article class="sector" data-reveal>
+            <span class="sector__index">→ 04</span>
+            <h3>Industrie &<br/>agro-alimentaire</h3>
+            <p>Ateliers, laboratoires, zones de production : conformité HACCP et flexibilité horaire.</p>
+          </article>
+
+          <article class="sector" data-reveal>
+            <span class="sector__index">→ 05</span>
+            <h3>Bureaux &<br/>tertiaire</h3>
+            <p>Espaces de travail, sièges sociaux, coworkings : un cadre soigné pour vos équipes.</p>
+          </article>
+
+          <article class="sector" data-reveal>
+            <span class="sector__index">→ 06</span>
+            <h3>Services publics<br/>& collectivités</h3>
+            <p>Mairies, écoles, équipements publics : transparence, marchés publics et continuité de service.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== PARALLAX MANIFESTO ============== -->
+    <section class="parallax" data-parallax aria-label="Notre engagement écologique">
+      <div class="parallax__bg" aria-hidden="true">
+        <img src="assets/eco-parallax.jpg" alt="" width="1160" height="490"
+             loading="lazy" decoding="async" data-parallax-img />
+      </div>
+      <div class="parallax__veil" aria-hidden="true"></div>
+      <div class="container parallax__inner">
+        <span class="eyebrow eyebrow--inverse" data-reveal>
+          <span class="eyebrow__dot"></span>
+          Notre planète, notre métier
+        </span>
+        <h2 class="parallax__title" data-reveal>
+          Nettoyer aujourd'hui,<br/>
+          <em>sans abîmer demain.</em>
+        </h2>
+        <p class="parallax__lead" data-reveal>
+          Produits écolabellisés, dosage maîtrisé, optimisation des tournées.
+          Parce que prendre soin d'un lieu, c'est aussi prendre soin du monde autour.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============== ENGAGEMENTS / VALEURS ============== -->
+    <section class="commit" id="engagements">
+      <div class="container commit__inner">
+        <div class="commit__head" data-reveal>
+          <span class="eyebrow eyebrow--inverse">
+            <span class="eyebrow__dot"></span>
+            Nos engagements
+          </span>
+          <h2 class="section-title section-title--inverse">
+            Un métier <em>essentiel</em>,<br/>
+            exercé avec conscience.
+          </h2>
+          <p class="section-lead section-lead--inverse">
+            Nous croyons qu'un travail bien fait commence par des équipes bien traitées, des produits responsables et un dialogue constant avec nos clients.
+          </p>
+        </div>
+
+        <div class="commit__grid">
+
+          <article class="commit-card" data-reveal>
+            <div class="commit-card__num">01</div>
+            <h3>Écoute attentive</h3>
+            <p>Chaque site est unique. Nous prenons le temps d'analyser vos contraintes avant d'écrire le moindre cahier des charges.</p>
+          </article>
+
+          <article class="commit-card" data-reveal>
+            <div class="commit-card__num">02</div>
+            <h3>Qualité constante</h3>
+            <p>Contrôles réguliers, formation continue, reporting transparent — nos engagements de service sont mesurables.</p>
+          </article>
+
+          <article class="commit-card" data-reveal>
+            <div class="commit-card__num">03</div>
+            <h3>Éco-responsabilité</h3>
+            <p>Produits écolabellisés, dosage maîtrisé, optimisation des tournées : nos pratiques évoluent vers moins d'impact.</p>
+          </article>
+
+          <article class="commit-card" data-reveal>
+            <div class="commit-card__num">04</div>
+            <h3>Proximité humaine</h3>
+            <p>Un interlocuteur dédié, des agents fidèles qui connaissent vos sites — la fin de l'anonymat du nettoyage.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== TESTIMONIAL ============== -->
+    <section class="quote" data-reveal>
+      <div class="container">
+        <figure class="quote__figure">
+          <svg viewBox="0 0 60 40" class="quote__mark" aria-hidden="true">
+            <path d="M0 40V20C0 8.954 8.954 0 20 0v8c-6.627 0-12 5.373-12 12v4h12v16H0zM35 40V20C35 8.954 43.954 0 55 0v8c-6.627 0-12 5.373-12 12v4h12v16H35z" fill="currentColor"/>
+          </svg>
+          <blockquote>
+            <p>
+              On les a découverts pour les parties communes de la résidence — aujourd'hui ils s'occupent aussi de la vitrerie et des petits dépannages. Le même interlocuteur depuis huit ans, et un travail qu'on ne discute plus.
+            </p>
+          </blockquote>
+          <figcaption>
+            <span class="quote__author">Conseil syndical · Résidence Les Cigales</span>
+            <span class="quote__city">Avignon · Vaucluse</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============== CONTACT / DEVIS ============== -->
+    <section class="contact" id="contact">
+      <div class="container contact__inner">
+
+        <div class="contact__left" data-reveal>
+          <span class="eyebrow">
+            <span class="eyebrow__dot"></span>
+            Prendre contact
+          </span>
+          <h2 class="section-title" id="devis">
+            Parlons de votre <em>site</em>.
+          </h2>
+          <p class="section-lead">
+            Un projet d'entretien régulier, un chantier ponctuel, une remise en état urgente ? Décrivez-nous votre besoin — nous revenons vers vous sous 48h ouvrées avec une proposition claire.
+          </p>
+
+          <ul class="contact__info">
+            <li>
+              <span class="contact__info-label">Téléphone</span>
+              <a href="tel:+33490800505" class="contact__info-value">04 90 80 05 05</a>
+            </li>
+            <li>
+              <span class="contact__info-label">Adresse</span>
+              <span class="contact__info-value">13, avenue de l'Orme Fourchu<br/>84000 Avignon</span>
+            </li>
+            <li>
+              <span class="contact__info-label">Horaires</span>
+              <span class="contact__info-value">Lundi – Samedi · 8h–12h, 14h–18h</span>
+            </li>
+            <li>
+              <span class="contact__info-label">Zone d'intervention</span>
+              <span class="contact__info-value">Vaucluse & départements limitrophes</span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contact__form" data-reveal onsubmit="event.preventDefault(); alert('Merci — votre demande a bien été enregistrée. (Formulaire de démonstration)');">
+          <div class="form-row">
+            <label>
+              <span>Nom complet</span>
+              <input type="text" name="name" required placeholder="Jean Dupont" />
+            </label>
+            <label>
+              <span>Société / Copropriété</span>
+              <input type="text" name="company" placeholder="Résidence Les Tilleuls" />
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" required placeholder="jean@exemple.fr" />
+            </label>
+            <label>
+              <span>Téléphone</span>
+              <input type="tel" name="phone" placeholder="06 12 34 56 78" />
+            </label>
+          </div>
+
+          <label class="form-full">
+            <span>Type de besoin</span>
+            <select name="service">
+              <option>Nettoyage de parties communes</option>
+              <option>Bio-nettoyage médical</option>
+              <option>Hygiène alimentaire</option>
+              <option>Vitrerie</option>
+              <option>Espace de vente</option>
+              <option>Remise en état</option>
+              <option>Multi-services / maintenance</option>
+              <option>Autre — à préciser</option>
+            </select>
+          </label>
+
+          <label class="form-full">
+            <span>Votre message</span>
+            <textarea name="message" rows="4" placeholder="Décrivez votre site, vos contraintes, vos attentes…"></textarea>
+          </label>
+
+          <button type="submit" class="btn btn--primary btn--lg btn--full">
+            Envoyer ma demande
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </button>
+          <p class="form-note">Vos données ne sont utilisées que pour vous répondre. Aucun envoi commercial.</p>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <a href="#top" class="nav__logo nav__logo--light">
+          <span class="nav__logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 156 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 44 C54 56 116 53 152 12 C124 35 70 43 6 44 Z" fill="#F4C20E"/>
+              <text x="0" y="37" font-family="'Inter Tight','Inter',sans-serif" font-size="40" font-weight="800" letter-spacing="-2.5" fill="currentColor">GSC</text>
+            </svg>
+          </span>
+          <span class="nav__logo-text">Copronet</span>
+        </a>
+        <p class="footer__tagline">
+          La propreté professionnelle, pensée comme un service de proximité, partout dans le Vaucluse.
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Parties communes</a></li>
+          <li><a href="#services">Milieu médical</a></li>
+          <li><a href="#services">Milieu alimentaire</a></li>
+          <li><a href="#services">Vitrerie</a></li>
+          <li><a href="#services">Remise en état</a></li>
+          <li><a href="#services">Multi-services</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Entreprise</h4>
+        <ul>
+          <li><a href="#histoire">Notre histoire</a></li>
+          <li><a href="#engagements">Engagements</a></li>
+          <li><a href="#secteurs">Secteurs</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li>13 av. de l'Orme Fourchu<br/>84000 Avignon</li>
+          <li><a href="tel:+33490800505">04 90 80 05 05</a></li>
+          <li>Lun–Sam · 8h–12h, 14h–18h</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© <span data-year>2026</span> GSC Copronet — Arnaud Propreté. Tous droits réservés.</p>
+      <p class="footer__legal">SIRET 421 475 211 00056 · RCS Avignon</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
