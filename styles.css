@@ -397,7 +397,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .hero {
   position: relative;
-  padding: clamp(80px, 11vw, 140px) 0 80px;
+  padding: clamp(80px, 11vw, 140px) 0 36px;
   overflow: hidden;
 }
 
@@ -662,7 +662,7 @@ ul { margin: 0; padding: 0; list-style: none; }
    INTRO
    ===================================================== */
 
-.intro { padding: clamp(80px, 10vw, 140px) 0; }
+.intro { padding: clamp(40px, 5vw, 60px) 0 clamp(80px, 10vw, 140px); }
 
 .intro__inner {
   display: grid;
