@@ -1469,11 +1469,8 @@ a.contact__info-value:hover { color: var(--accent); border-bottom-color: var(--a
 .detail-hero__photo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform .45s var(--ease);
+  object-fit: contain;
 }
-
-.detail-hero__photo:hover img { transform: scale(1.035); }
 
 .detail-content {
   padding: clamp(76px, 9vw, 132px) 0;
