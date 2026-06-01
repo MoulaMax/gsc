@@ -171,7 +171,7 @@
     'manutention-transport': {
       title: 'Manutention & transport',
       category: 'Multi-services',
-      image: 'assets/services/manutention-transport.jpg',
+      image: 'assets/services/manutention-transport-propre.jpg',
       alt: 'Transport professionnel d’une charge lourde',
       lead: 'Des moyens adaptés pour déplacer mobilier, archives, équipements et charges lourdes en toute sérénité.',
       heading: 'Vos équipements déplacés avec méthode et précaution.',
