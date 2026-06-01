@@ -349,9 +349,224 @@
     }
   };
 
+  const serviceEnhancements = {
+    'parties-communes': {
+      images: [
+        ['assets/services/parties-communes.jpg', 'Résidence entretenue par GSC Copronet'],
+        ['assets/services/parties-communes-2.jpg', 'Remplacement d’un éclairage dans les parties communes']
+      ],
+      paragraphs: [
+        'Selon les besoins de votre immeuble, la prestation peut intégrer des opérations plus techniques : brossage mécanisé des sols, nettoyage des moquettes, entretien des parkings, débouchage des conduits de vide-ordures ou lavage de façade. Un même interlocuteur peut ainsi suivre l’entretien courant et les demandes ponctuelles.'
+      ],
+      items: [
+        'Brossage mécanisé des sols et nettoyage des moquettes',
+        'Débouchage et désinfection des conduits de vide-ordures',
+        'Lavage de façade et arrosage de la végétation ornementale'
+      ]
+    },
+    'milieu-medical': {
+      images: [
+        ['assets/services/milieu-medical.jpg', 'Salle d’imagerie médicale propre et entretenue'],
+        ['assets/services/milieu-medical-2.jpg', 'Intervention de nettoyage dans un environnement médical']
+      ],
+      paragraphs: [
+        'Notre expérience dans ces environnements nous permet de travailler avec les protocoles et les normes propres au milieu médical. La fidélisation de nos agents contribue également à maintenir des méthodes régulières et une connaissance précise de votre site.',
+        'Nous pouvons fournir et installer les consommables nécessaires au quotidien : papier hygiénique, essuie-mains, savon, désodorisant et désinfectant.'
+      ],
+      items: [
+        'Fourniture et installation des produits d’hygiène',
+        'Protocoles adaptés aux cabinets, laboratoires et centres de santé'
+      ]
+    },
+    'milieu-alimentaire': {
+      images: [
+        ['assets/services/milieu-alimentaire.jpg', 'Zone de production agroalimentaire'],
+        ['assets/services/milieu-alimentaire-2.jpg', 'Nettoyage professionnel dans un environnement alimentaire']
+      ],
+      paragraphs: [
+        'Nous accompagnons les producteurs, les professionnels de l’industrie alimentaire ainsi que les entreprises de logistique, de stockage et de manutention de denrées. Les détergents employés sont choisis en conformité avec les exigences légales et la méthodologie HACCP appliquée dans les locaux alimentaires.',
+        'La prestation peut comprendre le traitement des chaînes de production, la fourniture des consommables d’accueil et la protection des sols, en complément du nettoyage régulier.'
+      ],
+      items: [
+        'Dégraissage, désinfection et lavage des chaînes de production',
+        'Fourniture et installation des produits d’hygiène et d’accueil',
+        'Traitement et protection de tous types de sols'
+      ]
+    },
+    'espaces-de-vente': {
+      images: [
+        ['assets/services/espaces-de-vente.jpg', 'Nettoyage d’une devanture commerciale'],
+        ['assets/services/espaces-de-vente-2.jpg', 'Autolaveuse utilisée dans un espace de vente'],
+        ['assets/services/espaces-de-vente-3.jpg', 'Nettoyage de luminaires en hauteur']
+      ],
+      paragraphs: [
+        'Notre expérience des zones urbaines et des secteurs à forte concentration commerciale nous permet d’adapter les horaires, les moyens techniques et la fréquence des passages. L’objectif est simple : intervenir efficacement sans perturber l’accueil de vos clients.',
+        'Les opérations extérieures peuvent inclure les stores bannes, auvents, bâches, enseignes lumineuses ou non, façades et trottoirs de devanture.'
+      ],
+      items: [
+        'Entretien des stores bannes, auvents et bâches',
+        'Nettoyage des enseignes lumineuses ou non',
+        'Traitement des trottoirs de devanture et salissures diverses'
+      ]
+    },
+    'remise-en-etat': {
+      images: [
+        ['assets/services/remise-en-etat.jpg', 'Sol remis en état par une intervention professionnelle'],
+        ['assets/services/remise-en-etat-2.jpg', 'Rénovation technique d’un revêtement de sol']
+      ],
+      paragraphs: [
+        'Nous intervenons dans le neuf comme dans l’ancien avec des moyens techniques adaptés et du personnel formé. Cela permet de traiter aussi bien une fin de chantier qu’un dégât des eaux, un incendie, un local insalubre ou un espace occupé après un squat.',
+        'Les travaux peuvent également comprendre l’arrachage d’anciens revêtements et la rénovation de supports variés : terre cuite, carreaux de ciment, pierre, béton ou parquet.'
+      ],
+      items: [
+        'Nettoyage après incendie, dégât des eaux ou autre sinistre',
+        'Traitement de locaux insalubres ou occupés après un squat',
+        'Arrachage de moquette, sisal, jonc de mer ou linoléum',
+        'Rénovation de la terre cuite, de la pierre, du béton et du parquet'
+      ]
+    },
+    'maintenance-immobiliere': {
+      images: [
+        ['assets/services/maintenance-immobiliere.jpg', 'Travaux de peinture réalisés dans un bâtiment'],
+        ['assets/services/maintenance-immobiliere-2.jpg', 'Installation et contrôle d’un détecteur de fumée']
+      ],
+      paragraphs: [
+        'Les interventions couvrent plusieurs corps de métier : plomberie, peinture, petite maçonnerie, serrurerie, menuiserie, revêtements de sol et électricité légère. Nos agents sont formés et habilités pour assurer une réponse polyvalente, réactive et suivie.',
+        'Vous pouvez ainsi centraliser les demandes courantes, depuis un débouchage ou un raccord de peinture jusqu’au montage de mobilier, au remplacement d’un éclairage ou à la pose de plinthes et de carrelage.'
+      ],
+      items: [
+        'Plomberie : débouchage, entretien et remplacement des équipements sanitaires',
+        'Peinture : raccords, rebouchage et revêtements muraux',
+        'Petite maçonnerie : cloisons, murs, plinthes et carrelage',
+        'Électricité légère : remplacement d’éclairage et réparations courantes'
+      ]
+    },
+    'espaces-verts': {
+      images: [
+        ['assets/services/espaces-verts.jpg', 'Espace vert entretenu autour d’un bâtiment'],
+        ['assets/services/espaces-verts-2.jpg', 'Débroussaillage d’un espace extérieur'],
+        ['assets/services/espaces-verts-3.jpg', 'Entretien paysager d’une copropriété'],
+        ['assets/services/espaces-verts-4.jpg', 'Taille et entretien d’un espace arboré']
+      ],
+      paragraphs: [
+        'Nos agents sont compétents, organisés et autonomes. Ils interviennent dans le respect du calendrier défini avec vous, que la demande soit ponctuelle ou périodique.',
+        'Cette organisation permet de conserver des extérieurs agréables pour les résidents, les collaborateurs et les visiteurs, tout en tenant compte des saisons.'
+      ],
+      items: []
+    },
+    'factotum': {
+      images: [
+        ['assets/services/factotum.jpg', 'Outils utilisés pour de petites réparations'],
+        ['assets/services/factotum-2.jpg', 'Intervention de maintenance légère sur un site']
+      ],
+      paragraphs: [
+        'Historiquement chargé du bon fonctionnement technique d’une maison, le factotum répond aujourd’hui aux besoins très concrets des immeubles et locaux professionnels. Nos agents polyvalents prennent en charge une grande variété de demandes avec autonomie.',
+        'Le service peut aussi couvrir le transport et la destruction d’archives, les déménagements entre sites, la pose de films occultants ou solaires, les moustiquaires, les racks à vélo et l’approvisionnement en produits d’hygiène.'
+      ],
+      items: [
+        'Transport et destruction d’archives',
+        'Pose de films solaires, films occultants et moustiquaires',
+        'Remplacement de vitres cassées, serrures et luminaires',
+        'Pose de racks à vélo et approvisionnement en produits d’hygiène'
+      ]
+    },
+    'reamenagement-bureaux': {
+      images: [
+        ['assets/services/reamenagement-bureaux.jpg', 'Réaménagement d’un espace de bureaux'],
+        ['assets/services/reamenagement-bureaux-2.jpg', 'Travaux d’adaptation dans des bureaux']
+      ],
+      paragraphs: [
+        'Les opérations peuvent inclure l’isolation, les cloisons, faux plafonds, sols, stores, films adhésifs, éclairages, revêtements muraux et travaux de peinture. Nous coordonnons également le montage, le démontage et le transport du mobilier.',
+        'L’objectif est de créer un environnement de travail sain et fonctionnel. Nous nous appuyons pour cela sur une écoute attentive, des agents autonomes et un réseau d’entreprises partenaires.'
+      ],
+      items: [
+        'Isolation et adaptation des cloisons',
+        'Optimisation de l’éclairage et remplacement par des solutions LED',
+        'Rebouchage, peinture et pose de revêtements muraux',
+        'Montage, démontage, manutention et transport du mobilier'
+      ]
+    },
+    'manutention-transport': {
+      images: [
+        ['assets/services/manutention-transport-propre.jpg', 'Transport d’une charge lourde dans un escalier'],
+        ['assets/services/manutention-transport-2.jpg', 'Déplacement professionnel d’un coffre-fort']
+      ],
+      paragraphs: [
+        'Photocopieurs, coffres-forts, distributeurs, matériel informatique, électroménager ou archives : nous préparons chaque opération en fonction des accès et du poids des éléments à déplacer.',
+        'Nos équipes apportent des conseils adaptés, interviennent rapidement lorsque la situation l’exige et ajustent leurs horaires à vos contraintes. Le matériel employé est choisi pour préserver la sécurité des personnes, des locaux et des équipements.'
+      ],
+      items: [
+        'Manutention administrative : archives, documents et dossiers',
+        'Transport de photocopieurs, coffres-forts et distributeurs',
+        'Conseil personnalisé et adaptation aux contraintes horaires',
+        'Matériel approprié pour une intervention sécurisée'
+      ]
+    },
+    'evacuation-encombrants': {
+      images: [
+        ['assets/services/evacuation-encombrants.jpg', 'Évacuation d’encombrants par une équipe professionnelle'],
+        ['assets/services/evacuation-encombrants-2.jpg', 'Tri et enlèvement de déchets encombrants']
+      ],
+      paragraphs: [
+        'L’intervention peut concerner une résidence, un bureau ou un local commercial, en centre-ville comme en périphérie. Nos équipes assurent la continuité des prestations et s’adaptent au volume comme aux contraintes d’accès.',
+        'Nous pouvons également intervenir pour des manifestations culturelles, salons et festivals afin de ramasser, trier et évacuer les déchets générés par l’événement.'
+      ],
+      items: [
+        'Débarrassage et assainissement des caves',
+        'Interventions dans les résidences, bureaux et commerces',
+        'Ramassage et tri lors de salons, festivals et manifestations'
+      ]
+    },
+    'bureaux-tertiaire': {
+      images: [
+        ['assets/services/bureaux-tertiaire.jpg', 'Bureau professionnel propre et rangé'],
+        ['assets/services/bureaux-tertiaire-2.jpg', 'Entretien professionnel d’un espace de travail'],
+        ['assets/services/bureaux-tertiaire-3.jpg', 'Illustration de l’engagement environnemental GSC Copronet']
+      ],
+      paragraphs: [
+        'Nous intervenons également dans les infrastructures culturelles et administratives, les universités, lycées, collèges et écoles. La stabilité des équipes favorise une relation de confiance durable et une qualité constante.',
+        'Au-delà du nettoyage régulier, nous proposons le traitement des sols thermoplastiques, des pierres naturelles ou reconstituées, des parquets et des moquettes, selon les méthodes adaptées à chaque matériau.'
+      ],
+      items: [
+        'Entretien des sols thermoplastiques',
+        'Protection des pierres naturelles, pierres reconstituées et parquets',
+        'Nettoyage des moquettes à sec ou par injection-extraction'
+      ]
+    },
+    'ateliers-usines': {
+      images: [
+        ['assets/services/ateliers-usines.jpg', 'Zone industrielle entretenue'],
+        ['assets/services/ateliers-usines-2.jpg', 'Nettoyage technique de grilles d’aération']
+      ],
+      paragraphs: [
+        'Nos équipes interviennent avec les moyens humains et techniques nécessaires pour assurer la continuité des prestations. Lorsque cela est nécessaire, nous travaillons dans le cadre d’un plan de prévention existant ou élaboré avec votre établissement.',
+        'Les interventions techniques peuvent comprendre le lessivage de parois, y compris en hauteur, le dégraissage des machines et chaînes de production ou encore le nettoyage à la vapeur sous pression.'
+      ],
+      items: [
+        'Protection des sols par des traitements adaptés',
+        'Lessivage des parois et structures en hauteur',
+        'Nettoyage à la vapeur sous pression'
+      ]
+    },
+    'parkings': {
+      images: [
+        ['assets/services/parkings.jpg', 'Parking souterrain propre et éclairé'],
+        ['assets/services/parkings-2.jpg', 'Entretien professionnel d’un parking']
+      ],
+      paragraphs: [
+        'Nos agents sont formés et habilités à utiliser le matériel adapté aux parkings aériens comme souterrains. Ils peuvent intervenir de manière ponctuelle ou selon une périodicité définie avec vous.',
+        'L’entretien porte aussi sur les accès routiers et piétonniers, les réceptacles à déchets, les zones sensibles et les surfaces de contact.'
+      ],
+      items: [
+        'Désinfection des zones sensibles et surfaces de contact'
+      ]
+    }
+  };
+
   const params = new URLSearchParams(window.location.search);
   const slug = params.get('service');
   const service = services[slug] || services['parties-communes'];
+  const enhancement = serviceEnhancements[slug] || {};
 
   const setText = (selector, text) => {
     const element = document.querySelector(selector);
@@ -363,15 +578,29 @@
   setText('[data-service-lead]', service.lead);
   setText('[data-service-heading]', service.heading);
 
-  const image = document.querySelector('[data-service-image]');
-  if (image) {
-    image.src = service.image;
-    image.alt = service.alt;
+  const gallery = document.querySelector('[data-service-gallery]');
+  if (gallery) {
+    const images = enhancement.images || [[service.image, service.alt]];
+    gallery.dataset.count = images.length;
+
+    images.forEach(([src, alt], index) => {
+      const figure = document.createElement('figure');
+      figure.className = 'detail-hero__photo';
+
+      const image = document.createElement('img');
+      image.src = src;
+      image.alt = alt;
+      image.loading = index === 0 ? 'eager' : 'lazy';
+      image.decoding = 'async';
+
+      figure.appendChild(image);
+      gallery.appendChild(figure);
+    });
   }
 
   const description = document.querySelector('[data-service-description]');
   if (description) {
-    service.paragraphs.forEach(text => {
+    [...service.paragraphs, ...(enhancement.paragraphs || [])].forEach(text => {
       const paragraph = document.createElement('p');
       paragraph.textContent = text;
       description.appendChild(paragraph);
@@ -380,7 +609,7 @@
 
   const list = document.querySelector('[data-service-list]');
   if (list) {
-    service.items.forEach(text => {
+    [...service.items, ...(enhancement.items || [])].forEach(text => {
       const item = document.createElement('li');
       item.textContent = text;
       list.appendChild(item);

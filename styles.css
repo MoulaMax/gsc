@@ -1441,20 +1441,39 @@ a.contact__info-value:hover { color: var(--accent); border-bottom-color: var(--a
   margin-top: 38px;
 }
 
-.detail-hero__figure {
-  min-height: 520px;
-  overflow: hidden;
+.detail-hero__gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  height: 520px;
+  padding: 10px;
   border-radius: var(--radius-lg);
   background: var(--bg-softer);
   box-shadow: var(--shadow-lg);
 }
 
-.detail-hero__figure img {
+.detail-hero__gallery[data-count="1"] { grid-template-columns: 1fr; grid-template-rows: 1fr; }
+.detail-hero__gallery[data-count="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: 1fr; }
+.detail-hero__gallery[data-count="3"] .detail-hero__photo:first-child { grid-row: 1 / span 2; }
+
+.detail-hero__photo {
+  margin: 0;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: calc(var(--radius-lg) - 8px);
+  background: var(--bg-soft);
+}
+
+.detail-hero__photo img {
   width: 100%;
   height: 100%;
-  min-height: 520px;
   object-fit: cover;
+  transition: transform .45s var(--ease);
 }
+
+.detail-hero__photo:hover img { transform: scale(1.035); }
 
 .detail-content {
   padding: clamp(76px, 9vw, 132px) 0;
@@ -1642,7 +1661,7 @@ a.contact__info-value:hover { color: var(--accent); border-bottom-color: var(--a
 
 @media (max-width: 920px) {
   .detail-hero__inner { grid-template-columns: 1fr; }
-  .detail-hero__figure, .detail-hero__figure img { min-height: 360px; }
+  .detail-hero__gallery { height: 360px; }
   .detail-content__grid { grid-template-columns: 1fr; }
   .detail-contact { position: static; }
 }
@@ -1650,7 +1669,7 @@ a.contact__info-value:hover { color: var(--accent); border-bottom-color: var(--a
 @media (max-width: 640px) {
   .detail-back { margin-bottom: 42px; }
   .detail-hero h1 { font-size: clamp(3.05rem, 15vw, 4.8rem); }
-  .detail-hero__figure, .detail-hero__figure img { min-height: 280px; }
+  .detail-hero__gallery { height: 280px; gap: 6px; padding: 6px; }
   .detail-list { grid-template-columns: 1fr; }
   .detail-related__grid { grid-template-columns: 1fr; }
 }
