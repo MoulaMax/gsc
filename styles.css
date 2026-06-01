@@ -1220,6 +1220,33 @@ a.contact__info-value {
 
 a.contact__info-value:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
+.contact__social {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-card);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform .25s var(--ease), border-color .25s var(--ease), color .25s var(--ease), box-shadow .25s var(--ease);
+}
+
+.contact__social svg {
+  width: 17px;
+  height: 17px;
+  color: var(--accent);
+}
+
+.contact__social:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  color: var(--accent-deep);
+  box-shadow: var(--shadow-sm);
+}
+
 /* Form */
 .contact__form {
   background: var(--bg-card);
