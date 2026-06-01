@@ -583,19 +583,84 @@
     const images = enhancement.images || [[service.image, service.alt]];
     gallery.dataset.count = images.length;
 
-    images.forEach(([src, alt], index) => {
+    const photos = images.map(([src, alt]) => {
       const figure = document.createElement('figure');
       figure.className = 'detail-hero__photo';
 
       const image = document.createElement('img');
       image.src = src;
       image.alt = alt;
-      image.loading = index === 0 ? 'eager' : 'lazy';
+      image.loading = 'eager';
       image.decoding = 'async';
 
       figure.appendChild(image);
       gallery.appendChild(figure);
+
+      return { figure, image };
     });
+    let galleryObserver;
+
+    const createRow = rowPhotos => {
+      const row = document.createElement('div');
+      row.className = 'detail-hero__row';
+      row.append(...rowPhotos.map(photo => photo.figure));
+      return row;
+    };
+
+    const layoutGallery = () => {
+      if (!photos.every(photo => photo.image.naturalWidth)) return;
+
+      photos.forEach(photo => {
+        photo.ratio = photo.image.naturalWidth / photo.image.naturalHeight;
+        photo.figure.style.setProperty('--photo-ratio', photo.ratio);
+      });
+
+      gallery.replaceChildren();
+      gallery.classList.remove('detail-hero__gallery--portrait-stack');
+      galleryObserver?.disconnect();
+
+      const portrait = photos.find(photo => photo.ratio < .95);
+      if (portrait && photos.length >= 3) {
+        const stackedPhotos = photos.filter(photo => photo !== portrait);
+        const stackedColumn = document.createElement('div');
+        const portraitColumn = document.createElement('div');
+        const stackedHeightRatio = stackedPhotos.reduce((total, photo) => total + (1 / photo.ratio), 0);
+
+        stackedColumn.className = 'detail-hero__column detail-hero__column--stack';
+        portraitColumn.className = 'detail-hero__column detail-hero__column--portrait';
+        stackedColumn.append(...stackedPhotos.map(photo => photo.figure));
+        portraitColumn.append(portrait.figure);
+        gallery.classList.add('detail-hero__gallery--portrait-stack');
+        gallery.append(stackedColumn, portraitColumn);
+
+        const fitColumns = () => {
+          const gap = parseFloat(getComputedStyle(gallery).gap) || 0;
+          const stackedGaps = gap * (stackedPhotos.length - 1);
+          const stackedWidth = (
+            gallery.clientWidth - gap - (portrait.ratio * stackedGaps)
+          ) / (1 + (portrait.ratio * stackedHeightRatio));
+
+          stackedColumn.style.flex = `0 0 ${stackedWidth}px`;
+        };
+
+        galleryObserver = new ResizeObserver(fitColumns);
+        galleryObserver.observe(gallery);
+        fitColumns();
+        return;
+      }
+
+      if (photos.length === 3) {
+        gallery.append(createRow([photos[0]]), createRow(photos.slice(1)));
+        return;
+      }
+
+      for (let index = 0; index < photos.length; index += 2) {
+        gallery.append(createRow(photos.slice(index, index + 2)));
+      }
+    };
+
+    photos.forEach(photo => photo.image.addEventListener('load', layoutGallery));
+    layoutGallery();
   }
 
   const description = document.querySelector('[data-service-description]');
