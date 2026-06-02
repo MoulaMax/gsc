@@ -181,7 +181,8 @@ function sendViaSmtp(string $to, string $rawMessage, string $envelopeFrom, array
     $ehlo = 'gsc-copronet.com';
     try {
         if (!$expect($read(), ['220'])) return false;
-        if (!$expect($send("EHLO {$ehlo}"), ['250'])) return false;
+        $caps = $send("EHLO {$ehlo}");
+        if (!$expect($caps, ['250'])) return false;
 
         if ($secure === 'tls') {
             if (!$expect($send('STARTTLS'), ['220'])) return false;
@@ -190,12 +191,47 @@ function sendViaSmtp(string $to, string $rawMessage, string $envelopeFrom, array
                 STREAM_CRYPTO_METHOD_TLS_CLIENT | STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT | STREAM_CRYPTO_METHOD_TLSv1_3_CLIENT
             );
             if ($crypto !== true) { $error = 'Échec du chiffrement STARTTLS.'; return false; }
-            if (!$expect($send("EHLO {$ehlo}"), ['250'])) return false;
+            $caps = $send("EHLO {$ehlo}");
+            if (!$expect($caps, ['250'])) return false;
         }
 
-        if (!$expect($send('AUTH LOGIN'), ['334'])) return false;
-        if (!$expect($send(base64_encode((string) $smtp['user'])), ['334'])) return false;
-        if (!$expect($send(base64_encode((string) ($smtp['pass'] ?? ''))), ['235'])) return false;
+        $user = (string) ($smtp['user'] ?? '');
+        $pass = (string) ($smtp['pass'] ?? '');
+
+        // Mécanismes d'authentification annoncés par le serveur
+        $authLine = '';
+        foreach (preg_split('/\r?\n/', $caps) as $line) {
+            if (stripos($line, 'AUTH') !== false && (stripos($line, 'LOGIN') !== false || stripos($line, 'PLAIN') !== false)) {
+                $authLine = strtoupper(trim($line));
+            }
+        }
+        $tryPlain = ($authLine === '' || strpos($authLine, 'PLAIN') !== false);
+        $tryLogin = ($authLine === '' || strpos($authLine, 'LOGIN') !== false);
+
+        $authed = false;
+        $authResp = '';
+
+        if ($tryPlain) {
+            $r = $send('AUTH PLAIN ' . base64_encode("\0{$user}\0{$pass}"));
+            if (substr(ltrim($r), 0, 3) === '235') { $authed = true; } else { $authResp = trim($r); }
+        }
+        if (!$authed && $tryLogin) {
+            $r1 = $send('AUTH LOGIN');
+            if (substr(ltrim($r1), 0, 3) === '334') {
+                $send(base64_encode($user));
+                $r3 = $send(base64_encode($pass));
+                if (substr(ltrim($r3), 0, 3) === '235') { $authed = true; } else { $authResp = trim($r3); }
+            } else {
+                $authResp = trim($r1);
+            }
+        }
+
+        if (!$authed) {
+            $error = 'Authentification refusée'
+                   . ($authResp !== '' ? " (réponse : {$authResp})" : '')
+                   . ($authLine !== '' ? " [serveur propose : {$authLine}]" : ' [aucune capacité AUTH annoncée]');
+            return false;
+        }
 
         if (!$expect($send("MAIL FROM:<{$envelopeFrom}>"), ['250'])) return false;
         if (!$expect($send("RCPT TO:<{$to}>"), ['250', '251'])) return false;
