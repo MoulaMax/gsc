@@ -3,17 +3,19 @@
    GSC COPRONET — Traitement du formulaire de devis
    ------------------------------------------------------------
    Reçoit les demandes envoyées depuis index.html (multipart,
-   photos jointes possibles) et les transmet par e-mail à
-   l'adresse définie dans $config['recipient'].
+   photos jointes possibles) et les transmet par e-mail.
 
-   Fonctionne sur tout hébergement supportant PHP (OVH,
-   o2switch, Ionos, Hostinger…). Aucune dépendance externe.
+   Deux modes d'envoi (clé 'transport') :
+     - 'mail' : fonction PHP mail() — pour un hébergement mutualisé
+                (OVH, o2switch, Ionos…) où le serveur mail est branché.
+     - 'smtp' : envoi SMTP authentifié — pour tester en local, ou
+                pour un hébergeur sans mail() / exigeant un relais SMTP.
 
-   ➜ Avant la mise en ligne :
-     1. Vérifier $config['recipient'] (destinataire).
-     2. Créer un alias e-mail "no-reply@gsc-copronet.com"
-        chez votre hébergeur — utilisé comme expéditeur
-        technique pour éviter d'être marqué comme spam.
+   Les identifiants SMTP ne sont PAS dans ce fichier : créez un
+   fichier "contact.config.local.php" (non versionné) à partir de
+   "contact.config.local.example.php". Voir ce dernier pour les détails.
+
+   Aucune dépendance externe (client SMTP intégré, pur PHP).
    ============================================================ */
 
 declare(strict_types=1);
@@ -22,13 +24,24 @@ $config = [
     // Destinataire des demandes
     'recipient' => 'a.arnaud@gsc-copronet.com',
 
-    // Expéditeur technique. DOIT appartenir au domaine du site
-    // pour passer SPF/DKIM. Créez l'alias chez votre hébergeur.
+    // Expéditeur technique (mode 'mail'). DOIT appartenir au domaine.
     'from_email' => 'no-reply@gsc-copronet.com',
     'from_name'  => 'Formulaire GSC Copronet',
 
-    // Préfixe du sujet
     'subject_prefix' => '[Site] Demande de devis',
+
+    // Transport : 'mail' (hébergeur) ou 'smtp' (test local / SMTP authentifié)
+    'transport' => 'mail',
+    // Affiche le détail technique d'une erreur d'envoi dans la réponse
+    'debug'     => false,
+    // Paramètres SMTP (remplis via contact.config.local.php)
+    'smtp' => [
+        'host'   => '',
+        'port'   => 587,
+        'secure' => 'tls', // 'tls' (587), 'ssl' (465) ou 'none'
+        'user'   => '',
+        'pass'   => '',
+    ],
 
     // Limites pour les pièces jointes
     'max_files'        => 6,
@@ -39,6 +52,18 @@ $config = [
     // Page de remerciement (repli sans JavaScript)
     'success_url' => 'merci.html',
 ];
+
+// Surcharge locale (identifiants SMTP) — fichier non versionné s'il existe
+$localConfigFile = __DIR__ . '/contact.config.local.php';
+if (is_file($localConfigFile)) {
+    $override = require $localConfigFile;
+    if (is_array($override)) {
+        if (isset($override['smtp']) && is_array($override['smtp'])) {
+            $override['smtp'] = array_merge($config['smtp'], $override['smtp']);
+        }
+        $config = array_merge($config, $override);
+    }
+}
 
 // Libellés humains pour les valeurs de <select>
 $serviceLabels = [
@@ -86,13 +111,95 @@ function respond(bool $ok, string $message, array $config, bool $wantsJson, arra
            . '<h1 style="font-size:1.4rem">Votre demande n\'a pas pu être envoyée</h1>'
            . '<p>' . htmlspecialchars($message, ENT_QUOTES, 'UTF-8') . '</p>';
         foreach ($errors as $field => $err) {
-            echo '<p><strong>' . htmlspecialchars($field, ENT_QUOTES, 'UTF-8') . '</strong> : '
-               . htmlspecialchars($err, ENT_QUOTES, 'UTF-8') . '</p>';
+            echo '<p><strong>' . htmlspecialchars((string) $field, ENT_QUOTES, 'UTF-8') . '</strong> : '
+               . htmlspecialchars((string) $err, ENT_QUOTES, 'UTF-8') . '</p>';
         }
         echo '<p><a href="index.html#devis" style="color:#2F6E54">‹ Revenir au formulaire</a></p>'
            . '</body></html>';
     }
     exit;
+}
+
+/**
+ * Envoi via SMTP authentifié (client minimal, sans dépendance).
+ * $rawMessage doit contenir les en-têtes + une ligne vide + le corps.
+ */
+function sendViaSmtp(string $to, string $rawMessage, string $envelopeFrom, array $smtp, ?string &$error = null): bool
+{
+    $host   = (string) ($smtp['host'] ?? '');
+    $port   = (int) ($smtp['port'] ?? 587);
+    $secure = (string) ($smtp['secure'] ?? 'tls');
+
+    if ($host === '' || ($smtp['user'] ?? '') === '') {
+        $error = 'Configuration SMTP incomplète (host / user).';
+        return false;
+    }
+
+    $target = ($secure === 'ssl') ? "ssl://{$host}:{$port}" : "tcp://{$host}:{$port}";
+    $ctx = stream_context_create(['ssl' => ['verify_peer' => true, 'verify_peer_name' => true, 'SNI_enabled' => true]]);
+
+    $fp = @stream_socket_client($target, $errno, $errstr, 15, STREAM_CLIENT_CONNECT, $ctx);
+    if (!$fp) {
+        $error = "Connexion SMTP impossible : {$errstr} ({$errno}).";
+        return false;
+    }
+    stream_set_timeout($fp, 15);
+
+    $read = static function () use ($fp): string {
+        $data = '';
+        while (($line = fgets($fp, 600)) !== false) {
+            $data .= $line;
+            if (strlen($line) < 4 || $line[3] !== '-') break; // dernière ligne d'une réponse multi-lignes
+        }
+        return $data;
+    };
+    $send = static function (string $cmd) use ($fp, $read): string {
+        fwrite($fp, $cmd . "\r\n");
+        return $read();
+    };
+    $expect = static function (string $resp, array $codes) use (&$error): bool {
+        $code = substr(ltrim($resp), 0, 3);
+        if (!in_array($code, $codes, true)) {
+            $error = 'Réponse SMTP inattendue : ' . trim($resp);
+            return false;
+        }
+        return true;
+    };
+
+    $ehlo = 'gsc-copronet.com';
+    try {
+        if (!$expect($read(), ['220'])) return false;
+        if (!$expect($send("EHLO {$ehlo}"), ['250'])) return false;
+
+        if ($secure === 'tls') {
+            if (!$expect($send('STARTTLS'), ['220'])) return false;
+            $crypto = stream_socket_enable_crypto(
+                $fp, true,
+                STREAM_CRYPTO_METHOD_TLS_CLIENT | STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT | STREAM_CRYPTO_METHOD_TLSv1_3_CLIENT
+            );
+            if ($crypto !== true) { $error = 'Échec du chiffrement STARTTLS.'; return false; }
+            if (!$expect($send("EHLO {$ehlo}"), ['250'])) return false;
+        }
+
+        if (!$expect($send('AUTH LOGIN'), ['334'])) return false;
+        if (!$expect($send(base64_encode((string) $smtp['user'])), ['334'])) return false;
+        if (!$expect($send(base64_encode((string) ($smtp['pass'] ?? ''))), ['235'])) return false;
+
+        if (!$expect($send("MAIL FROM:<{$envelopeFrom}>"), ['250'])) return false;
+        if (!$expect($send("RCPT TO:<{$to}>"), ['250', '251'])) return false;
+        if (!$expect($send('DATA'), ['354'])) return false;
+
+        // Point-stuffing (RFC 5321) : une ligne ne doit pas commencer par "."
+        $body = preg_replace('/^\./m', '..', $rawMessage);
+        fwrite($fp, $body . "\r\n.\r\n");
+        if (!$expect($read(), ['250'])) return false;
+
+        $send('QUIT');
+    } finally {
+        fclose($fp);
+    }
+
+    return true;
 }
 
 /* ---------- Méthode ---------- */
@@ -102,7 +209,6 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {
 
 /* ---------- Anti-spam : honeypot ---------- */
 if (trim((string) ($_POST['website'] ?? '')) !== '') {
-    // Faux succès : on n'envoie rien mais on ne révèle pas le blocage
     respond(true, 'Merci, votre demande a bien été envoyée.', $config, $wantsJson);
 }
 
@@ -192,7 +298,7 @@ if (!empty($_FILES['photos']) && is_array($_FILES['photos']['name'] ?? null)) {
             respond(false, 'Le total des photos dépasse ' . (int) ($config['max_total_bytes'] / 1024 / 1024) . ' Mo. Merci d’en envoyer moins.', $config, $wantsJson);
         }
 
-        // Validation du type MIME (pas juste l'extension)
+        // Validation du type MIME réel (pas juste l'extension)
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
         $mime  = $finfo ? (string) finfo_file($finfo, $tmp) : '';
         if ($finfo) finfo_close($finfo);
@@ -206,7 +312,6 @@ if (!empty($_FILES['photos']) && is_array($_FILES['photos']['name'] ?? null)) {
             respond(false, 'Impossible de lire une des photos jointes.', $config, $wantsJson);
         }
 
-        // Nom sûr (alphanumérique + extension)
         $ext  = pathinfo($orig, PATHINFO_EXTENSION);
         $base = preg_replace('/[^A-Za-z0-9._-]/', '_', pathinfo($orig, PATHINFO_FILENAME) ?: 'photo');
         $safeName = mb_substr((string) $base, 0, 60) . ($ext !== '' ? '.' . preg_replace('/[^A-Za-z0-9]/', '', $ext) : '');
@@ -217,6 +322,14 @@ if (!empty($_FILES['photos']) && is_array($_FILES['photos']['name'] ?? null)) {
             'data' => $data,
         ];
     }
+}
+
+/* ---------- Expéditeur ---------- */
+// En SMTP authentifié, l'expéditeur doit correspondre au compte authentifié
+$transport = $config['transport'] ?? 'mail';
+$fromEmail = $config['from_email'];
+if ($transport === 'smtp' && !empty($config['smtp']['user'])) {
+    $fromEmail = (string) $config['smtp']['user'];
 }
 
 /* ---------- Construction de l'e-mail ---------- */
@@ -251,20 +364,19 @@ $lines[] = 'Reçu le ' . date('d/m/Y à H:i');
 
 $body = implode("\r\n", $lines);
 
-$subject        = $config['subject_prefix'] . ($serviceLabel !== '' ? ' — ' . $serviceLabel : '');
-$encodedSubject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
+$subject         = $config['subject_prefix'] . ($serviceLabel !== '' ? ' — ' . $serviceLabel : '');
+$encodedSubject  = '=?UTF-8?B?' . base64_encode($subject) . '?=';
 $encodedFromName = '=?UTF-8?B?' . base64_encode($config['from_name']) . '?=';
 
 $headers = [
-    'From: ' . $encodedFromName . ' <' . $config['from_email'] . '>',
+    'From: ' . $encodedFromName . ' <' . $fromEmail . '>',
     'Reply-To: ' . $email,
     'X-Mailer: PHP/' . phpversion(),
     'MIME-Version: 1.0',
 ];
 
 if ($attachments) {
-    // Mail multipart : 1 partie texte + N pièces jointes
-    $boundary = '----=_GSC_' . bin2hex(random_bytes(8));
+    $boundary  = '----=_GSC_' . bin2hex(random_bytes(8));
     $headers[] = 'Content-Type: multipart/mixed; boundary="' . $boundary . '"';
 
     $mailBody  = "--{$boundary}\r\n";
@@ -288,13 +400,25 @@ if ($attachments) {
     $mailBody  = $body;
 }
 
-$sent = @mail(
-    $config['recipient'],
-    $encodedSubject,
-    $mailBody,
-    implode("\r\n", $headers),
-    '-f' . $config['from_email']
-);
+/* ---------- Envoi ---------- */
+$smtpError = null;
+
+if ($transport === 'smtp') {
+    $raw = 'Date: ' . date('r') . "\r\n"
+         . 'To: ' . $config['recipient'] . "\r\n"
+         . 'Subject: ' . $encodedSubject . "\r\n"
+         . implode("\r\n", $headers) . "\r\n\r\n"
+         . $mailBody;
+    $sent = sendViaSmtp($config['recipient'], $raw, $fromEmail, $config['smtp'] ?? [], $smtpError);
+} else {
+    $sent = @mail(
+        $config['recipient'],
+        $encodedSubject,
+        $mailBody,
+        implode("\r\n", $headers),
+        '-f' . $fromEmail
+    );
+}
 
 if ($sent) {
     respond(
@@ -305,12 +429,12 @@ if ($sent) {
     );
 }
 
-// Trace pour diagnostic dans le journal d'erreurs PHP de l'hébergeur
-error_log('[GSC contact.php] Échec de mail() vers ' . $config['recipient']);
+// Trace pour diagnostic dans le journal d'erreurs PHP
+error_log('[GSC contact.php] Échec de l’envoi vers ' . $config['recipient'] . ($smtpError ? ' — ' . $smtpError : ''));
 
-respond(
-    false,
-    'L’envoi a échoué. Merci de réessayer ou de nous appeler au 04 90 80 05 05.',
-    $config,
-    $wantsJson
-);
+$failMessage = 'L’envoi a échoué. Merci de réessayer ou de nous appeler au 04 90 80 05 05.';
+if (!empty($config['debug']) && $smtpError) {
+    $failMessage .= ' [debug : ' . $smtpError . ']';
+}
+
+respond(false, $failMessage, $config, $wantsJson);
