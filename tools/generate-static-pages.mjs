@@ -24,6 +24,26 @@ for (const [slug, route] of Object.entries(routes)) {
       '<meta name="description" content="Découvrez les prestations de propreté et de maintenance proposées par GSC Copronet à Avignon et dans le Vaucluse." />',
       `<meta name="description" content="${escapeHtml(route.description)}" />\n  <link rel="canonical" href="${canonical}" />`
     )
+    .replace(
+      '<meta property="og:title" content="Service professionnel | GSC Copronet" />',
+      `<meta property="og:title" content="${escapeHtml(route.title)}" />`
+    )
+    .replace(
+      '<meta property="og:description" content="Découvrez les prestations de propreté et de maintenance proposées par GSC Copronet à Avignon et dans le Vaucluse." />',
+      `<meta property="og:description" content="${escapeHtml(route.description)}" />`
+    )
+    .replace(
+      '<meta property="og:url" content="https://www.gsc-copronet.com/service.html" />',
+      `<meta property="og:url" content="${canonical}" />`
+    )
+    .replace(
+      '<meta name="twitter:title" content="Service professionnel | GSC Copronet" />',
+      `<meta name="twitter:title" content="${escapeHtml(route.title)}" />`
+    )
+    .replace(
+      '<meta name="twitter:description" content="Découvrez les prestations de propreté et de maintenance proposées par GSC Copronet à Avignon et dans le Vaucluse." />',
+      `<meta name="twitter:description" content="${escapeHtml(route.description)}" />`
+    )
     .replace('<body class="detail-page">', `<body class="detail-page" data-service-slug="${slug}">`)
     .replace('<h1 data-service-title>Service professionnel</h1>', `<h1 data-service-title>${escapeHtml(route.h1)}</h1>`);
 

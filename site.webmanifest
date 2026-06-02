@@ -1,0 +1,19 @@
+{
+  "name": "GSC Copronet — Propreté & multiservices",
+  "short_name": "GSC Copronet",
+  "description": "Entreprise familiale de propreté et multiservices à Avignon et dans le Vaucluse.",
+  "lang": "fr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#0E2A20",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ]
+}

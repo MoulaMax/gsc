@@ -8,11 +8,61 @@
   <link rel="canonical" href="https://www.gsc-copronet.com/" />
   <meta name="theme-color" content="#0E2A20" />
 
+  <!-- Icônes -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Open Graph / réseaux sociaux -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="GSC Copronet" />
+  <meta property="og:title" content="Entreprise de nettoyage professionnel à Avignon | GSC Copronet" />
+  <meta property="og:description" content="Nettoyage médical, industriel, fin de chantier, vitrerie en hauteur et entretien régulier de locaux à Avignon et dans le Vaucluse. Entreprise familiale depuis 1980." />
+  <meta property="og:url" content="https://www.gsc-copronet.com/" />
+  <meta property="og:image" content="https://www.gsc-copronet.com/assets/services-parallax.jpg" />
+  <meta property="og:image:width" content="1800" />
+  <meta property="og:image:height" content="579" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Entreprise de nettoyage professionnel à Avignon | GSC Copronet" />
+  <meta name="twitter:description" content="Nettoyage médical, industriel, fin de chantier, vitrerie et entretien régulier dans le Vaucluse. Entreprise familiale depuis 1980." />
+  <meta name="twitter:image" content="https://www.gsc-copronet.com/assets/services-parallax.jpg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=20260602-gsc1-6" />
+  <link rel="stylesheet" href="styles.css?v=20260602-gsc1-7" />
+
+  <!-- Données structurées : établissement local -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "GSC Copronet",
+    "image": "https://www.gsc-copronet.com/assets/locaux-gsc.jpg",
+    "url": "https://www.gsc-copronet.com/",
+    "telephone": "+33490800505",
+    "email": "a.arnaud@gsc-copronet.com",
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "13 avenue de l'Orme Fourchu",
+      "postalCode": "84000",
+      "addressLocality": "Avignon",
+      "addressRegion": "Vaucluse",
+      "addressCountry": "FR"
+    },
+    "areaServed": "Vaucluse",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "12:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "14:00", "closes": "18:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/gsc_copronet",
+      "https://fr.linkedin.com/company/gsc-copronet"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -746,6 +796,10 @@
 
     <div class="container footer__bottom">
       <p>© <span data-year>2026</span> GSC Copronet — Arnaud Propreté. Tous droits réservés.</p>
+      <nav class="footer__links" aria-label="Liens légaux">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Confidentialité</a>
+      </nav>
       <p class="footer__legal">SIRET 421 475 211 00056 · RCS Avignon</p>
     </div>
   </footer>
