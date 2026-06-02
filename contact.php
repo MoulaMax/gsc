@@ -20,6 +20,18 @@
 
 declare(strict_types=1);
 
+/* ---------- Compatibilité (installs PHP minimales) ---------- */
+// Polyfill pour PHP < 8.0
+if (!function_exists('str_contains')) {
+    function str_contains(string $haystack, string $needle): bool {
+        return $needle === '' || strpos($haystack, $needle) !== false;
+    }
+}
+// Troncature UTF-8 sûre, même si l'extension mbstring est absente
+function gsc_truncate(string $value, int $max): string {
+    return function_exists('mb_substr') ? mb_substr($value, 0, $max) : substr($value, 0, $max);
+}
+
 $config = [
     // Destinataire des demandes
     'recipient' => 'a.arnaud@gsc-copronet.com',
@@ -90,7 +102,7 @@ $wantsJson = (
 /**
  * Renvoie la réponse adaptée puis stoppe.
  */
-function respond(bool $ok, string $message, array $config, bool $wantsJson, array $errors = []): never
+function respond(bool $ok, string $message, array $config, bool $wantsJson, array $errors = [])
 {
     if ($wantsJson) {
         header('Content-Type: application/json; charset=utf-8');
@@ -216,7 +228,7 @@ if (trim((string) ($_POST['website'] ?? '')) !== '') {
 $clean = static function (string $key, int $max = 2000): string {
     $value = trim((string) ($_POST[$key] ?? ''));
     $value = str_replace("\0", '', $value);
-    return mb_substr($value, 0, $max);
+    return gsc_truncate($value, $max);
 };
 
 $name      = $clean('name', 120);
@@ -298,13 +310,19 @@ if (!empty($_FILES['photos']) && is_array($_FILES['photos']['name'] ?? null)) {
             respond(false, 'Le total des photos dépasse ' . (int) ($config['max_total_bytes'] / 1024 / 1024) . ' Mo. Merci d’en envoyer moins.', $config, $wantsJson);
         }
 
-        // Validation du type MIME réel (pas juste l'extension)
-        $finfo = finfo_open(FILEINFO_MIME_TYPE);
-        $mime  = $finfo ? (string) finfo_file($finfo, $tmp) : '';
-        if ($finfo) finfo_close($finfo);
-
-        if (!in_array($mime, $config['allowed_mime'], true)) {
-            respond(false, 'Seules les photos (JPEG, PNG, WEBP, HEIC) sont acceptées.', $config, $wantsJson);
+        // Validation du type : MIME réel via fileinfo si dispo, sinon repli par extension
+        $ext = strtolower((string) pathinfo($orig, PATHINFO_EXTENSION));
+        if (function_exists('finfo_open') && ($finfo = finfo_open(FILEINFO_MIME_TYPE))) {
+            $mime = (string) finfo_file($finfo, $tmp);
+            finfo_close($finfo);
+            if (!in_array($mime, $config['allowed_mime'], true)) {
+                respond(false, 'Seules les photos (JPEG, PNG, WEBP, HEIC) sont acceptées.', $config, $wantsJson);
+            }
+        } else {
+            if (!in_array($ext, ['jpg', 'jpeg', 'png', 'webp', 'heic', 'heif'], true)) {
+                respond(false, 'Seules les photos (JPEG, PNG, WEBP, HEIC) sont acceptées.', $config, $wantsJson);
+            }
+            $mime = 'application/octet-stream';
         }
 
         $data = file_get_contents($tmp);
@@ -312,9 +330,8 @@ if (!empty($_FILES['photos']) && is_array($_FILES['photos']['name'] ?? null)) {
             respond(false, 'Impossible de lire une des photos jointes.', $config, $wantsJson);
         }
 
-        $ext  = pathinfo($orig, PATHINFO_EXTENSION);
         $base = preg_replace('/[^A-Za-z0-9._-]/', '_', pathinfo($orig, PATHINFO_FILENAME) ?: 'photo');
-        $safeName = mb_substr((string) $base, 0, 60) . ($ext !== '' ? '.' . preg_replace('/[^A-Za-z0-9]/', '', $ext) : '');
+        $safeName = gsc_truncate((string) $base, 60) . ($ext !== '' ? '.' . preg_replace('/[^A-Za-z0-9]/', '', $ext) : '');
 
         $attachments[] = [
             'name' => $safeName,
