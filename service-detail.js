@@ -7,7 +7,7 @@
 
   const services = {
     'parties-communes': {
-      title: 'Parties communes',
+      title: 'Nettoyage de copropriétés & parties communes',
       category: 'Copropriétés & syndics',
       image: 'assets/services/parties-communes.jpg',
       alt: 'Résidence entretenue par GSC Copronet',
@@ -28,7 +28,7 @@
       related: ['vitrerie', 'parkings', 'evacuation-encombrants']
     },
     'milieu-medical': {
-      title: 'Milieu médical',
+      title: 'Nettoyage médical & bio-nettoyage',
       category: 'Santé & médico-social',
       image: 'assets/services/milieu-medical.jpg',
       alt: 'Salle d’imagerie médicale propre et entretenue',
@@ -48,7 +48,7 @@
       related: ['bureaux-tertiaire', 'vitrerie', 'milieu-alimentaire']
     },
     'milieu-alimentaire': {
-      title: 'Milieu alimentaire',
+      title: 'Nettoyage alimentaire & hygiène HACCP',
       category: 'Industrie agroalimentaire',
       image: 'assets/services/milieu-alimentaire.jpg',
       alt: 'Zone de production agroalimentaire',
@@ -68,7 +68,7 @@
       related: ['ateliers-usines', 'remise-en-etat', 'vitrerie']
     },
     'vitrerie': {
-      title: 'Vitrerie',
+      title: 'Vitrerie professionnelle & accès difficiles',
       category: 'Propreté professionnelle',
       image: 'assets/services/vitrerie.jpg',
       alt: 'Façade vitrée d’un bâtiment professionnel',
@@ -88,8 +88,8 @@
       related: ['espaces-de-vente', 'bureaux-tertiaire', 'parties-communes']
     },
     'espaces-de-vente': {
-      title: 'Espaces de vente',
-      category: 'Commerce & retail',
+      title: 'Nettoyage commerces, boutiques & vitrines',
+      category: 'Commerce & espaces de vente',
       image: 'assets/services/espaces-de-vente.jpg',
       alt: 'Autolaveuse utilisée dans un espace de vente',
       lead: 'Un environnement impeccable avant l’ouverture, du sol à la vitrine, pour accueillir vos clients dans les meilleures conditions.',
@@ -108,7 +108,7 @@
       related: ['vitrerie', 'remise-en-etat', 'bureaux-tertiaire']
     },
     'remise-en-etat': {
-      title: 'Remise en état',
+      title: 'Remise en état & fin de chantier',
       category: 'Interventions ponctuelles',
       image: 'assets/services/remise-en-etat.jpg',
       alt: 'Sol remis en état par une intervention professionnelle',
@@ -125,10 +125,31 @@
         'Nettoyage approfondi des surfaces et équipements',
         'Interventions ponctuelles après sinistre'
       ],
-      related: ['vitrerie', 'espaces-de-vente', 'ateliers-usines']
+      related: ['traitement-sols', 'vitrerie', 'ateliers-usines']
+    },
+    'traitement-sols': {
+      title: 'Traitement & rénovation des sols',
+      category: 'Interventions techniques',
+      image: 'assets/services/remise-en-etat-2.jpg',
+      alt: 'Rénovation technique d’un revêtement de sol',
+      lead: 'Décapage, cristallisation, protection ou rénovation : nous adaptons la méthode au matériau et à l’usage de vos locaux.',
+      heading: 'Redonnez à vos sols professionnels leur aspect et leur résistance.',
+      paragraphs: [
+        'Les sols fortement sollicités demandent une intervention précise. GSC Copronet analyse le support, son niveau d’encrassement et les contraintes d’exploitation avant de sélectionner la technique la plus adaptée.',
+        'Nous intervenons sur les revêtements thermoplastiques, la pierre naturelle ou reconstituée, la terre cuite, le béton, les carreaux de ciment, les parquets et les moquettes. La prestation peut être ponctuelle ou intégrée à un programme d’entretien.'
+      ],
+      items: [
+        'Décapage, lavage mécanisé et remise en état approfondie',
+        'Cristallisation et protection des sols en pierre',
+        'Rénovation de la terre cuite, du béton et des carreaux de ciment',
+        'Entretien et protection des parquets',
+        'Nettoyage des moquettes à sec ou par injection-extraction',
+        'Visite technique et choix de la méthode adaptée au support'
+      ],
+      related: ['remise-en-etat', 'ateliers-usines', 'parkings']
     },
     'maintenance-immobiliere': {
-      title: 'Maintenance immobilière',
+      title: 'Maintenance immobilière & petits travaux',
       category: 'Multi-services',
       image: 'assets/services/maintenance-immobiliere.jpg',
       alt: 'Travaux de peinture réalisés dans un bâtiment',
@@ -248,7 +269,7 @@
       related: ['factotum', 'manutention-transport', 'maintenance-immobiliere']
     },
     'bureaux-tertiaire': {
-      title: 'Bureaux & tertiaire',
+      title: 'Nettoyage de bureaux & locaux tertiaires',
       category: 'Espaces de travail',
       image: 'assets/services/bureaux-tertiaire.jpg',
       alt: 'Bureau professionnel propre et rangé',
@@ -268,7 +289,7 @@
       related: ['vitrerie', 'milieu-medical', 'reamenagement-bureaux']
     },
     'ateliers-usines': {
-      title: 'Ateliers & usines',
+      title: 'Nettoyage industriel : ateliers, usines & sols techniques',
       category: 'Industrie',
       image: 'assets/services/ateliers-usines.jpg',
       alt: 'Zone industrielle entretenue',
@@ -288,7 +309,7 @@
       related: ['milieu-alimentaire', 'remise-en-etat', 'parkings']
     },
     'parkings': {
-      title: 'Parkings',
+      title: 'Nettoyage de parkings professionnels',
       category: 'Propreté professionnelle',
       image: 'assets/services/parkings.jpg',
       alt: 'Parking souterrain propre et éclairé',
@@ -346,6 +367,146 @@
         'Suivi régulier des prestations'
       ],
       related: ['bureaux-tertiaire', 'vitrerie', 'parties-communes']
+    },
+    'secteur-coproprietes-syndics': {
+      title: 'Copropriétés & syndics',
+      category: 'Secteur accompagné',
+      image: 'assets/services/parties-communes.jpg',
+      alt: 'Résidence entretenue par GSC Copronet',
+      lead: 'Un accompagnement suivi pour préserver la propreté, le confort et la valeur de vos immeubles au quotidien.',
+      heading: 'Un interlocuteur unique pour l’entretien courant et les besoins ponctuels de votre résidence.',
+      paragraphs: [
+        'GSC Copronet accompagne les syndics et copropriétés avec une organisation définie selon la taille de l’immeuble, la fréquentation des espaces et le cahier des charges établi ensemble. L’objectif est de maintenir des parties communes accueillantes et de garantir la continuité des interventions.',
+        'Parce que la vie d’une résidence ne se limite pas au nettoyage des halls et des escaliers, nos équipes peuvent aussi coordonner des réponses complémentaires : entretien des parkings, manipulation des conteneurs, enlèvement d’encombrants, relamping ou petite maintenance.'
+      ],
+      items: [
+        'Entretien régulier des parties communes et de la vitrerie',
+        'Suivi des locaux à ordures ménagères et des conteneurs',
+        'Entretien ponctuel ou périodique des parkings',
+        'Enlèvement d’encombrants et remise en état',
+        'Petite maintenance et relamping selon vos besoins'
+      ],
+      related: ['parties-communes', 'parkings', 'maintenance-immobiliere']
+    },
+    'secteur-sante-medico-social': {
+      title: 'Santé & médico-social',
+      category: 'Secteur accompagné',
+      image: 'assets/services/milieu-medical.jpg',
+      alt: 'Salle d’imagerie médicale propre et entretenue',
+      lead: 'Une organisation rigoureuse pour les établissements qui accueillent patients, résidents, professionnels de santé et visiteurs.',
+      heading: 'Des services adaptés aux contraintes particulières des environnements de soin.',
+      paragraphs: [
+        'Cabinets médicaux et infirmiers, centres d’imagerie, cliniques dentaires, centres de rééducation, laboratoires, pharmacies ou établissements médico-sociaux : chaque site possède ses usages, ses rythmes et ses zones sensibles.',
+        'GSC Copronet privilégie une relation durable, des équipes fidélisées et des méthodes claires. Le programme est construit autour de vos locaux et peut intégrer l’entretien régulier, la vitrerie, les sanitaires ainsi que la fourniture des consommables d’hygiène nécessaires au quotidien.'
+      ],
+      items: [
+        'Organisation adaptée aux zones sensibles et à vos horaires',
+        'Nettoyage médical régulier et interventions ponctuelles',
+        'Entretien des sols, sanitaires, mobiliers et surfaces vitrées',
+        'Mise en place des produits et consommables d’hygiène',
+        'Suivi régulier avec un interlocuteur de proximité'
+      ],
+      related: ['milieu-medical', 'vitrerie', 'bureaux-tertiaire']
+    },
+    'secteur-commerce-espaces-de-vente': {
+      title: 'Commerce & espaces de vente',
+      category: 'Secteur accompagné',
+      image: 'assets/services/espaces-de-vente.jpg',
+      alt: 'Nettoyage professionnel d’un espace de vente',
+      lead: 'Des espaces nets et accueillants pour valoriser votre image de marque avant même l’arrivée de vos clients.',
+      heading: 'Une organisation discrète et réactive, adaptée aux contraintes des lieux de vente.',
+      paragraphs: [
+        'Boutiques, magasins, showrooms et espaces d’accueil doivent rester impeccables sans perturber l’activité. GSC Copronet adapte les horaires, la fréquence des passages et les moyens engagés à la configuration de votre site.',
+        'L’accompagnement peut associer l’entretien courant des locaux à des opérations ciblées sur les vitrines, devantures, enseignes, stores, façades ou trottoirs. Vous disposez ainsi d’une réponse lisible pour les espaces intérieurs comme extérieurs.'
+      ],
+      items: [
+        'Entretien régulier des magasins et espaces d’accueil',
+        'Lavage de la vitrerie, des miroirs et des devantures',
+        'Nettoyage des enseignes, stores, façades et trottoirs',
+        'Remise en état et traitement des sols sollicités',
+        'Interventions organisées selon vos horaires d’ouverture'
+      ],
+      related: ['espaces-de-vente', 'vitrerie', 'remise-en-etat']
+    },
+    'secteur-industrie': {
+      title: 'Industrie',
+      category: 'Secteur accompagné',
+      image: 'assets/services/ateliers-usines.jpg',
+      alt: 'Zone industrielle entretenue par GSC Copronet',
+      lead: 'Des moyens humains et techniques adaptés aux ateliers, aux usines et aux contraintes propres à votre production.',
+      heading: 'Une organisation construite autour de votre site, de vos équipements et de vos impératifs.',
+      paragraphs: [
+        'Les environnements industriels demandent une préparation précise. GSC Copronet intervient dans le respect des plans de prévention existants ou vous accompagne pour définir les modalités adaptées à votre établissement.',
+        'Selon les besoins, les équipes assurent l’entretien régulier des sols et des surfaces, des remises en état approfondies ou des interventions techniques sur les machines, les chaînes de production, les parois et les accès difficiles.'
+      ],
+      items: [
+        'Programme d’intervention compatible avec votre production',
+        'Balayage et lavage mécanisés des surfaces',
+        'Dépoussiérage des parois, machines et structures',
+        'Dégraissage et nettoyage technique ponctuel',
+        'Traitement des sols, vitrerie et accès en hauteur'
+      ],
+      related: ['ateliers-usines', 'traitement-sols', 'vitrerie']
+    },
+    'secteur-agroalimentaire': {
+      title: 'Agroalimentaire',
+      category: 'Secteur accompagné',
+      image: 'assets/services/milieu-alimentaire.jpg',
+      alt: 'Zone de production agroalimentaire',
+      lead: 'Des prestations organisées autour des exigences d’hygiène des professionnels de l’alimentation et de leurs locaux.',
+      heading: 'Une réponse adaptée aux rythmes de production, de stockage et de manutention des denrées.',
+      paragraphs: [
+        'GSC Copronet accompagne les professionnels de l’industrie alimentaire, les producteurs ainsi que les entreprises de logistique, de stockage et de manutention de denrées. L’organisation est définie selon les contraintes propres à chaque site.',
+        'Les produits et méthodes sont choisis en cohérence avec les exigences applicables aux locaux alimentaires. L’entretien courant peut être complété par le dégraissage, la désinfection, le lavage des zones de production, le traitement des sols ou la fourniture des consommables d’hygiène.'
+      ],
+      items: [
+        'Organisation adaptée aux protocoles et aux rythmes du site',
+        'Nettoyage et désinfection des surfaces sensibles',
+        'Dégraissage et lavage des zones de production',
+        'Entretien des sanitaires, de la vitrerie et des sols',
+        'Fourniture des produits d’hygiène et d’accueil'
+      ],
+      related: ['milieu-alimentaire', 'ateliers-usines', 'traitement-sols']
+    },
+    'secteur-bureaux-tertiaire': {
+      title: 'Bureaux & tertiaire',
+      category: 'Secteur accompagné',
+      image: 'assets/services/bureaux-tertiaire.jpg',
+      alt: 'Bureau professionnel propre et rangé',
+      lead: 'Un cadre de travail propre, fonctionnel et agréable pour vos équipes, vos clients et vos visiteurs.',
+      heading: 'Des services ajustés à la fréquentation et aux usages de vos locaux professionnels.',
+      paragraphs: [
+        'Bureaux, sièges sociaux, espaces partagés, infrastructures culturelles ou administratives : GSC Copronet construit un programme lisible selon la configuration des lieux, les horaires et vos priorités.',
+        'La stabilité des équipes favorise une qualité régulière. En complément du nettoyage courant, nous pouvons mobiliser des prestations de vitrerie, de traitement des sols, de maintenance légère, de factotum ou de réaménagement de bureaux.'
+      ],
+      items: [
+        'Entretien régulier des espaces de travail et sanitaires',
+        'Lavage de la vitrerie et entretien des moquettes',
+        'Traitement et protection des sols',
+        'Factotum et maintenance immobilière courante',
+        'Réaménagement et manutention de mobilier'
+      ],
+      related: ['bureaux-tertiaire', 'factotum', 'reamenagement-bureaux']
+    },
+    'secteur-services-publics-collectivites': {
+      title: 'Services publics & collectivités',
+      category: 'Secteur accompagné',
+      image: 'assets/services/bureaux-tertiaire.jpg',
+      alt: 'Locaux administratifs entretenus par GSC Copronet',
+      lead: 'Une continuité de service adaptée aux lieux qui accueillent quotidiennement des usagers, des agents et des publics variés.',
+      heading: 'Un programme clair pour entretenir durablement vos bâtiments et équipements.',
+      paragraphs: [
+        'Établissements scolaires, bâtiments administratifs, infrastructures culturelles et équipements publics connaissent des niveaux de fréquentation et des usages très différents. GSC Copronet adapte les passages, les méthodes et le suivi à la réalité de chaque site.',
+        'L’accompagnement peut réunir l’entretien régulier, la vitrerie, le traitement des sols, les remises en état ponctuelles et certains services associés. Cette approche permet de conserver un interlocuteur de proximité pour des besoins variés.'
+      ],
+      items: [
+        'Entretien des locaux, circulations et espaces d’accueil',
+        'Nettoyage des sanitaires, sols et surfaces vitrées',
+        'Organisation adaptée aux horaires et à la fréquentation',
+        'Remise en état ponctuelle et traitement des sols',
+        'Suivi régulier des prestations'
+      ],
+      related: ['collectivites', 'bureaux-tertiaire', 'remise-en-etat']
     }
   };
 
@@ -423,6 +584,18 @@
         'Traitement de locaux insalubres ou occupés après un squat',
         'Arrachage de moquette, sisal, jonc de mer ou linoléum',
         'Rénovation de la terre cuite, de la pierre, du béton et du parquet'
+      ]
+    },
+    'traitement-sols': {
+      images: [
+        ['assets/services/remise-en-etat-2.jpg', 'Rénovation technique d’un revêtement de sol'],
+        ['assets/services/remise-en-etat.jpg', 'Sol professionnel remis en état']
+      ],
+      paragraphs: [
+        'Une visite technique permet de choisir une méthode cohérente avec votre objectif : décrassage approfondi, remise à niveau esthétique, protection du support ou préparation avant restitution des locaux.'
+      ],
+      items: [
+        'Programme ponctuel ou périodique selon la fréquentation des locaux'
       ]
     },
     'maintenance-immobiliere': {
@@ -563,10 +736,30 @@
     }
   };
 
+  const sectorEnhancementSources = {
+    'secteur-coproprietes-syndics': 'parties-communes',
+    'secteur-sante-medico-social': 'milieu-medical',
+    'secteur-commerce-espaces-de-vente': 'espaces-de-vente',
+    'secteur-industrie': 'ateliers-usines',
+    'secteur-agroalimentaire': 'milieu-alimentaire',
+    'secteur-bureaux-tertiaire': 'bureaux-tertiaire',
+    'secteur-services-publics-collectivites': 'bureaux-tertiaire'
+  };
+
+  Object.entries(sectorEnhancementSources).forEach(([sectorSlug, serviceSlug]) => {
+    serviceEnhancements[sectorSlug] = {
+      images: serviceEnhancements[serviceSlug]?.images
+    };
+  });
+
   const params = new URLSearchParams(window.location.search);
-  const slug = params.get('service');
+  const routes = window.GSC_SERVICE_ROUTES || {};
+  const slug = document.body.dataset.serviceSlug || params.get('service');
   const service = services[slug] || services['parties-communes'];
   const enhancement = serviceEnhancements[slug] || {};
+  const route = routes[slug];
+  const isSector = route?.kind === 'sector';
+  const serviceHref = serviceSlug => routes[serviceSlug]?.path || `service.html?service=${serviceSlug}`;
 
   const setText = (selector, text) => {
     const element = document.querySelector(selector);
@@ -574,12 +767,19 @@
   };
 
   setText('[data-service-category]', service.category);
-  setText('[data-service-title]', service.title);
+  setText('[data-service-title]', route?.h1 || service.title);
   setText('[data-service-lead]', service.lead);
   setText('[data-service-heading]', service.heading);
+  setText('[data-detail-back-label]', isSector ? 'Retour aux secteurs' : 'Retour aux services');
+  setText('[data-detail-copy-eyebrow]', isSector ? 'Un accompagnement adapté' : 'Une réponse sur mesure');
+  setText('[data-detail-list-title]', isSector ? 'Réponses adaptées à votre secteur' : 'Prestations proposées');
+
+  const detailBack = document.querySelector('[data-detail-back]');
+  if (detailBack) detailBack.href = isSector ? 'index.html#secteurs' : 'index.html#prestations';
 
   const gallery = document.querySelector('[data-service-gallery]');
   if (gallery) {
+    gallery.setAttribute('aria-label', isSector ? 'Photos du secteur' : 'Photos de la prestation');
     const images = enhancement.images || [[service.image, service.alt]];
     gallery.dataset.count = images.length;
 
@@ -687,7 +887,7 @@
       const relatedService = services[relatedSlug];
       const link = document.createElement('a');
       link.className = 'detail-related__card';
-      link.href = `service.html?service=${relatedSlug}`;
+      link.href = serviceHref(relatedSlug);
 
       const label = document.createElement('span');
       label.textContent = relatedService.category;
@@ -704,7 +904,7 @@
     });
   }
 
-  document.title = `${service.title} | GSC Copronet`;
+  document.title = route?.title || `${service.title} | GSC Copronet`;
   const meta = document.querySelector('meta[name="description"]');
-  if (meta) meta.content = service.lead;
+  if (meta) meta.content = route?.description || service.lead;
 })();

@@ -1,51 +1,52 @@
-# GSC Copronet — Refonte 2026
+# GSC Copronet - Variante commerciale et SEO
 
-Refonte complète du site web de [gsc-copronet.com](https://www.gsc-copronet.com/) — entreprise familiale de propreté et multiservices basée à Avignon.
+Nouvelle version du site GSC Copronet orientée acquisition locale et qualification
+des demandes de devis à Avignon et dans le Vaucluse.
 
-## Aperçu
+## Principes
 
-Site statique en HTML / CSS / JavaScript **vanilla** (aucune dépendance, aucun build) :
-ouvrez `index.html` dans un navigateur, c'est prêt.
+- Les interventions techniques et les prestations à forte valeur apparaissent en premier.
+- L'entretien régulier, les secteurs accompagnés et les multiservices disposent de blocs distincts.
+- Les intitulés visibles ciblent les recherches locales utiles : fin de chantier, nettoyage
+  industriel, médical, HACCP, vitrerie en hauteur et traitement des sols.
+- Le formulaire demande la surface, la ville, la fréquence, le délai et permet l'ajout de photos.
+- Chaque prestation dispose d'une page HTML statique avec un `title`, une description, un `h1`
+  et une URL lisible propres.
 
 ## Structure
 
+```text
+gsc1/
+|-- index.html
+|-- service.html
+|-- service-detail.js
+|-- service-routes.js
+|-- sitemap.xml
+|-- robots.txt
+|-- assets/
+`-- tools/
+    `-- generate-static-pages.mjs
 ```
-site-refonte/
-├── index.html      # Page unique, structurée en sections
-├── styles.css      # Design system complet (palette, typo, composants)
-├── script.js       # Sticky nav, menu mobile, reveal au scroll
-└── README.md
+
+`service.html` est le template partagé. `service-routes.js` centralise les URLs et
+les métadonnées SEO. Les pages statiques sont générées à partir de ces deux fichiers.
+
+## Régénérer les pages statiques
+
+```powershell
+node tools/generate-static-pages.mjs
 ```
 
-## Direction artistique
+## Tester en local
 
-- **Palette** : blanc pur + grays froids, vert forêt en couleur principale (`#2F6E54`),
-  sections sombres en vert profond (`#0E2A20`). Co-accents repris du logo GSC :
-  bleu royal (`#2B3A8E`) et jaune doré (`#F4C20E`).
-- **Typographie** : Inter Tight (titres) + Inter (texte) — registre suisse, sobre
-- **Style** : épuré, aéré, animations discrètes, micro-interactions soignées
-- **Inspirations** : sites de marques contemporaines (Stripe / Linear / Vercel / studios design FR)
+```powershell
+python -m http.server 8766 --bind 127.0.0.1
+```
 
-## Sections
+Puis ouvrir `http://127.0.0.1:8766/index.html`.
 
-1. **Hero** — titre éditorial, stats clés, carte coordonnées, marquee des secteurs
-2. **Histoire** — récit familial Agnès & Yvon Arnaud
-3. **Services** — grille de 6 cartes + bloc multi-services sur fond sombre
-4. **Secteurs** — 6 univers d'intervention (grille interactive)
-5. **Engagements** — 4 valeurs sur fond sombre
-6. **Témoignage** — citation éditoriale
-7. **Contact** — coordonnées + formulaire de devis
-8. **Footer** — liens, mentions, SIRET
+## À brancher avant la mise en ligne
 
-## Déploiement
-
-Le site fonctionne en local en double-cliquant `index.html`.
-Pour mise en ligne : déposer le dossier sur n'importe quel hébergeur statique
-(Netlify, Vercel, GitHub Pages, OVH, etc.).
-
-## Pistes d'évolution
-
-- Remplacer les visuels CSS abstraits du hero/multi-services par des photos pros des équipes & chantiers
-- Ajouter une vraie carte interactive dans la section Contact
-- Brancher le formulaire à un endpoint (Formspree, Netlify Forms, backend perso)
-- Décliner en pages dédiées par secteur si le SEO le justifie
+- Connecter le formulaire de devis à un endpoint réel.
+- Définir l'adresse de réception des demandes.
+- Vérifier le domaine final utilisé dans les balises canonical et dans `sitemap.xml`.
