@@ -1342,6 +1342,113 @@ a.contact__info-value:hover { color: var(--accent); border-bottom-color: var(--a
   color: var(--ink-muted);
 }
 
+/* Honeypot : caché en accessible (pas display:none, pour que les bots le voient) */
+.form-hp {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Consentement RGPD */
+.contact__form label.form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 8px;
+  margin-bottom: 22px;
+}
+
+.contact__form .form-consent input[type="checkbox"] {
+  width: auto;
+  margin-top: 3px;
+  flex-shrink: 0;
+  accent-color: var(--accent);
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+.contact__form .form-consent span {
+  display: inline;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 13px;
+  color: var(--ink-muted);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.contact__form .form-consent a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Statut d'envoi (succès / erreur) */
+.form-status {
+  margin: 0 0 18px;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+
+.form-status--ok {
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  border: 1px solid var(--accent);
+}
+
+.form-status--error {
+  background: #FBEAE5;
+  color: #8A2A1B;
+  border: 1px solid #E0A99B;
+}
+
+/* =====================================================
+   NOTICE (page de remerciement)
+   ===================================================== */
+
+.notice__inner {
+  max-width: 600px;
+  text-align: center;
+}
+
+.notice__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  margin: 0 auto 24px;
+}
+
+.notice__icon svg { width: 26px; height: 26px; }
+
+.notice__inner .eyebrow { justify-content: center; }
+
+.notice__inner h1 { margin-top: 18px; }
+
+.notice__inner p {
+  max-width: 52ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.notice__actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
 /* =====================================================
    FOOTER
    ===================================================== */

@@ -655,7 +655,16 @@
           </ul>
         </div>
 
-        <form class="contact__form" data-reveal autocomplete="off" onsubmit="event.preventDefault(); alert('Merci — votre demande a bien été enregistrée. (Formulaire de démonstration)');">
+        <form class="contact__form" data-reveal autocomplete="off"
+              action="contact.php" method="post" enctype="multipart/form-data"
+              data-contact-form>
+          <!-- Anti-spam (honeypot) : invisible, laissé vide par un humain -->
+          <div class="form-hp" aria-hidden="true">
+            <label>Ne remplissez pas ce champ
+              <input type="text" name="website" tabindex="-1" autocomplete="off" />
+            </label>
+          </div>
+
           <div class="form-row">
             <label>
               <span>Nom complet</span>
@@ -740,8 +749,15 @@
             <textarea name="message" rows="4" placeholder="Décrivez votre site, vos contraintes, vos attentes…"></textarea>
           </label>
 
-          <button type="submit" class="btn btn--primary btn--lg btn--full">
-            Envoyer ma demande
+          <label class="form-consent">
+            <input type="checkbox" name="consent" required />
+            <span>J'accepte que mes informations soient utilisées pour traiter ma demande, conformément à la <a href="confidentialite.html">politique de confidentialité</a>.</span>
+          </label>
+
+          <div class="form-status" data-form-status role="status" aria-live="polite" hidden></div>
+
+          <button type="submit" class="btn btn--primary btn--lg btn--full" data-form-submit>
+            <span data-form-submit-label>Envoyer ma demande</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M5 12h14M13 5l7 7-7 7"/>
             </svg>
@@ -804,6 +820,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20260602-gsc1-4" defer></script>
+  <script src="script.js?v=20260602-gsc1-5" defer></script>
 </body>
 </html>
