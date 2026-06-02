@@ -305,6 +305,9 @@ if ($sent) {
     );
 }
 
+// Trace pour diagnostic dans le journal d'erreurs PHP de l'hébergeur
+error_log('[GSC contact.php] Échec de mail() vers ' . $config['recipient']);
+
 respond(
     false,
     'L’envoi a échoué. Merci de réessayer ou de nous appeler au 04 90 80 05 05.',
