@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=20260602-gsc1-8" />
+  <link rel="stylesheet" href="styles.css?v=20260602-gsc1-9" />
 
   <!-- Données structurées : établissement local -->
   <script type="application/ld+json">
@@ -772,13 +772,14 @@
             <span>J'accepte que mes informations soient utilisées pour traiter ma demande, conformément à la <a href="confidentialite.html">politique de confidentialité</a>.</span>
           </label>
 
-          <!-- ====== ALTCHA (CAPTCHA RGPD — offre Static Forms Pro) ======
-               À ACTIVER : dans le dashboard Static Forms, section « ALTCHA »,
-               cliquer sur « Enable Altcha ». Le dashboard fournit alors le
-               balisage exact (composant <altcha-widget …> + script à charger)
-               à coller ICI, juste au-dessus du bouton "Envoyer".
-               Doc : https://www.staticforms.dev/docs/altcha
-          -->
+          <!-- Altcha (CAPTCHA RGPD — Static Forms Pro).
+               Le script Altcha est chargé en fin de page (<body>). -->
+          <altcha-widget
+            challengeurl="https://www.staticforms.dev/api/altcha/challenge?apiKey=sf_e5b32a8848784f7dc0336052"
+            name="altchaToken"
+            hidefooter="true"
+            auto="onfocus">
+          </altcha-widget>
 
           <button type="submit" class="btn btn--primary btn--lg btn--full">
             Envoyer ma demande
@@ -845,5 +846,6 @@
   </footer>
 
   <script src="script.js?v=20260602-gsc1-6" defer></script>
+  <script src="https://cdn.jsdelivr.net/gh/altcha-org/altcha/dist/altcha.min.js" type="module" defer></script>
 </body>
 </html>

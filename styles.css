@@ -1342,6 +1342,15 @@ a.contact__info-value:hover { color: var(--accent); border-bottom-color: var(--a
   color: var(--ink-muted);
 }
 
+/* Widget Altcha — espacement dans le formulaire */
+.contact__form altcha-widget {
+  display: block;
+  margin: 4px 0 22px;
+  --altcha-color-base: var(--bg-softer);
+  --altcha-color-border: var(--border);
+  --altcha-color-text: var(--ink);
+}
+
 /* Honeypot : caché en accessible (pas display:none, pour que les bots le voient) */
 .form-hp {
   position: absolute;
