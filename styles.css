@@ -814,6 +814,21 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .trust-card { padding: 26px; }
 
+.trust-card__logo {
+  width: min(190px, 100%);
+  height: 118px;
+  object-fit: contain;
+  object-position: left center;
+  margin-bottom: 22px;
+}
+
+.trust-card__logo--round {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+}
+
 .trust-card__placeholder {
   display: inline-grid;
   place-items: center;
