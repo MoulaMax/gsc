@@ -39,10 +39,12 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "GSC Copronet",
+    "legalName": "Arnaud Propreté",
     "image": "https://www.gsc-copronet.com/assets/locaux-gsc.jpg",
     "url": "https://www.gsc-copronet.com/",
     "telephone": "+33490800505",
     "email": "a.arnaud@gsc-copronet.com",
+    "taxID": "421 475 211 00056",
     "priceRange": "€€",
     "address": {
       "@type": "PostalAddress",
@@ -60,7 +62,9 @@
     "sameAs": [
       "https://www.instagram.com/gsc_copronet",
       "https://fr.linkedin.com/company/gsc-copronet"
-    ]
+    ],
+    "foundingDate": "1980",
+    "description": "Entreprise familiale de propreté professionnelle à Avignon, spécialisée dans le nettoyage B2B, l'entretien régulier, les interventions techniques et les multiservices dans le Vaucluse."
   }
   </script>
 </head>
@@ -84,7 +88,8 @@
         <a href="#entretien-regulier">Prestations régulières</a>
         <a href="#multiservices">Multiservices</a>
         <a href="#secteurs">Secteurs</a>
-        <a href="#engagements">Engagements</a>
+        <a href="#qui-sommes-nous">Qui sommes-nous</a>
+        <a href="conseils.html">Conseils</a>
       </nav>
 
       <div class="nav__actions">
@@ -474,120 +479,162 @@
       </div>
     </section>
 
-    <!-- ============== ENTREPRISE FAMILIALE ============== -->
-    <section class="intro" id="histoire">
-      <div class="container intro__inner">
-        <div class="intro__col-left">
-          <span class="eyebrow" data-reveal>
-            Entreprise familiale
-          </span>
-          <h2 class="section-title" data-reveal>
-            Une expertise locale,<br/>
-            une exigence qui <em>se transmet</em>.
-          </h2>
-        </div>
-        <div class="intro__col-right" data-reveal>
-          <p>
-            Depuis 1980, GSC Copronet accompagne copropriétés, entreprises, cabinets médicaux, commerces et sites industriels avec des prestations régulières ou ponctuelles adaptées à chaque site.
-          </p>
-          <p>
-            Basées à Avignon, nos équipes formées interviennent dans tout le Vaucluse avec un interlocuteur unique, des méthodes claires et une attention constante portée au travail bien fait.
-          </p>
-          <a href="#engagements" class="link-arrow">
-            Découvrir nos engagements
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 12h14M13 5l7 7-7 7"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============== PARALLAX MANIFESTO ============== -->
-    <section class="parallax" data-parallax aria-label="Notre engagement écologique">
-      <div class="parallax__bg" aria-hidden="true">
-        <img src="assets/eco-parallax.jpg" alt="" width="1160" height="490"
-             loading="lazy" decoding="async" data-parallax-img />
-      </div>
-      <div class="parallax__veil" aria-hidden="true"></div>
-      <div class="container parallax__inner">
-        <span class="eyebrow eyebrow--inverse" data-reveal>
-          Notre planète, notre métier
-        </span>
-        <h2 class="parallax__title" data-reveal>
-          Nettoyer aujourd'hui,<br/>
-          <em>sans abîmer demain.</em>
-        </h2>
-        <p class="parallax__lead" data-reveal>
-          Produits écolabellisés, dosage maîtrisé, optimisation des tournées.
-          Parce que prendre soin d'un lieu, c'est aussi prendre soin du monde autour.
-        </p>
-      </div>
-    </section>
-
-    <!-- ============== ENGAGEMENTS / VALEURS ============== -->
-    <section class="commit" id="engagements">
-      <div class="container commit__inner">
-        <div class="commit__head" data-reveal>
-          <span class="eyebrow eyebrow--inverse">
-            Nos engagements
-          </span>
-          <h2 class="section-title section-title--inverse">
-            Un métier <em>essentiel</em>,<br/>
-            exercé avec conscience.
-          </h2>
-          <p class="section-lead section-lead--inverse">
-            Nous croyons qu'un travail bien fait commence par des équipes bien traitées, des produits responsables et un dialogue constant avec nos clients.
-          </p>
-        </div>
-
-        <div class="commit__grid">
-
-          <article class="commit-card" data-reveal>
-            <div class="commit-card__num">01</div>
-            <h3>Écoute attentive</h3>
-            <p>Chaque site est unique. Nous prenons le temps d'analyser vos contraintes avant d'écrire le moindre cahier des charges.</p>
-          </article>
-
-          <article class="commit-card" data-reveal>
-            <div class="commit-card__num">02</div>
-            <h3>Qualité constante</h3>
-            <p>Contrôles réguliers, formation continue, reporting transparent — nos engagements de service sont mesurables.</p>
-          </article>
-
-          <article class="commit-card" data-reveal>
-            <div class="commit-card__num">03</div>
-            <h3>Éco-responsabilité</h3>
-            <p>Produits écolabellisés, dosage maîtrisé, optimisation des tournées : nos pratiques évoluent vers moins d'impact.</p>
-          </article>
-
-          <article class="commit-card" data-reveal>
-            <div class="commit-card__num">04</div>
-            <h3>Proximité humaine</h3>
-            <p>Un interlocuteur dédié, des agents fidèles qui connaissent vos sites — la fin de l'anonymat du nettoyage.</p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============== TESTIMONIAL ============== -->
-    <section class="quote" data-reveal>
+    <!-- ============== QUI SOMMES-NOUS / CONFIANCE ============== -->
+    <section class="about" id="qui-sommes-nous">
+      <span id="engagements" class="anchor-offset" aria-hidden="true"></span>
       <div class="container">
-        <figure class="quote__figure">
-          <svg viewBox="0 0 60 40" class="quote__mark" aria-hidden="true">
-            <path d="M0 40V20C0 8.954 8.954 0 20 0v8c-6.627 0-12 5.373-12 12v4h12v16H0zM35 40V20C35 8.954 43.954 0 55 0v8c-6.627 0-12 5.373-12 12v4h12v16H35z" fill="currentColor"/>
-          </svg>
-          <blockquote>
+        <div class="about__intro">
+          <div class="about__title" data-reveal>
+            <span class="eyebrow">Qui sommes-nous</span>
+            <h2 class="section-title">
+              Une entreprise familiale,<br/>
+              ancrée à <em>Avignon</em>.
+            </h2>
+          </div>
+          <div class="about__copy" data-reveal>
             <p>
-              On les a découverts pour les parties communes de la résidence — aujourd'hui ils s'occupent aussi de la vitrerie et des petits dépannages. Le même interlocuteur depuis huit ans, et un travail qu'on ne discute plus.
+              Depuis 1980, GSC Copronet accompagne copropriétés, entreprises, cabinets médicaux, commerces et sites industriels avec des prestations régulières ou ponctuelles adaptées à chaque site.
             </p>
-          </blockquote>
-          <figcaption>
-            <span class="quote__author">Conseil syndical · Résidence Les Cigales</span>
-            <span class="quote__city">Avignon · Vaucluse</span>
-          </figcaption>
-        </figure>
+            <p>
+              Basées à Avignon, nos équipes formées interviennent dans tout le Vaucluse avec un interlocuteur unique, des méthodes claires et une attention constante portée au travail bien fait.
+            </p>
+          </div>
+        </div>
+
+        <div class="about__stats" data-reveal>
+          <article>
+            <strong>1980</strong>
+            <span>création de l'entreprise</span>
+          </article>
+          <article>
+            <strong>35+</strong>
+            <span>collaborateurs formés</span>
+          </article>
+          <article>
+            <strong>Vaucluse</strong>
+            <span>zone d'intervention prioritaire</span>
+          </article>
+        </div>
+
+        <div class="about__grid">
+          <article class="about-card" data-reveal>
+            <span class="about-card__tag">Histoire</span>
+            <h3>Une culture de service transmise dans la durée.</h3>
+            <p>Notre modèle repose sur la proximité, la stabilité des équipes et une connaissance concrète des sites suivis au quotidien.</p>
+          </article>
+          <article class="about-card" data-reveal>
+            <span class="about-card__tag">Équipe</span>
+            <h3>Des agents identifiés, formés et suivis.</h3>
+            <p><span class="legal-todo">À compléter</span> Ajouter ici les photos d'équipe, responsables de secteur et éléments biographiques fournis par le propriétaire.</p>
+          </article>
+          <article class="about-card" data-reveal>
+            <span class="about-card__tag">Certifications</span>
+            <h3>QUALIPROPRE à mettre en avant.</h3>
+            <p><span class="legal-todo">À compléter</span> Insérer le logo QUALIPROPRE avec son justificatif. Ajouter l'adhésion FEP uniquement si elle est confirmée.</p>
+          </article>
+          <article class="about-card" data-reveal>
+            <span class="about-card__tag">Engagements</span>
+            <h3>Qualité, responsabilité et dialogue.</h3>
+            <p>Écoute attentive, contrôles réguliers, produits écolabellisés lorsque cela est possible et interlocuteur dédié pour chaque organisation.</p>
+          </article>
+        </div>
+
+        <div class="trust-panel" aria-labelledby="trust-title">
+          <header class="section-head" data-reveal>
+            <span class="eyebrow">Confiance & preuves</span>
+            <h2 class="section-title" id="trust-title">
+              Les éléments à fournir pour renforcer <em>l'E-E-A-T</em>.
+            </h2>
+            <p class="section-lead">
+              La structure est prête : il restera à remplacer les zones marquées par les contenus réels fournis par GSC Copronet.
+            </p>
+          </header>
+
+          <div class="trust__grid">
+            <article class="trust-card trust-card--logo" data-reveal>
+              <span class="trust-card__placeholder">Logo</span>
+              <h3>Certification QUALIPROPRE</h3>
+              <p><span class="legal-todo">À compléter</span> Ajouter le logo officiel, l'alt descriptif et le périmètre exact de certification.</p>
+            </article>
+            <article class="trust-card trust-card--logo" data-reveal>
+              <span class="trust-card__placeholder">FEP</span>
+              <h3>Adhésion FEP</h3>
+              <p><span class="legal-todo">À confirmer</span> Afficher ce bloc uniquement si l'adhésion est applicable et documentée.</p>
+            </article>
+            <article class="trust-card" data-reveal>
+              <h3>Témoignages nominatifs</h3>
+              <p><span class="legal-todo">À compléter</span> Nom, société, fonction et accord de publication pour chaque témoignage client.</p>
+            </article>
+            <article class="trust-card" data-reveal>
+              <h3>Références & cas chiffrés</h3>
+              <p><span class="legal-todo">À compléter</span> Logos clients autorisés, photos de chantier et résultats mesurables.</p>
+            </article>
+          </div>
+
+          <div class="testimonial-grid">
+            <figure class="testimonial-card" data-reveal>
+              <blockquote>
+                <p>« À remplacer par un avis client nominatif validé, avec contexte de mission et bénéfice concret. »</p>
+              </blockquote>
+              <figcaption><span class="legal-todo">Témoignage à compléter</span></figcaption>
+            </figure>
+            <figure class="testimonial-card" data-reveal>
+              <blockquote>
+                <p>« Ajouter ici un retour d'expérience copropriété, santé, industrie ou commerce avec accord écrit. »</p>
+              </blockquote>
+              <figcaption><span class="legal-todo">Témoignage à compléter</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== DERNIERS CONSEILS ============== -->
+    <section class="latest-advice" id="conseils">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <span class="eyebrow">Derniers conseils</span>
+          <h2 class="section-title">
+            Des repères simples pour <em>préparer vos demandes</em>.
+          </h2>
+          <p class="section-lead">
+            Quelques guides pratiques pour cadrer un chantier, une copropriété ou un environnement alimentaire avant la visite technique.
+          </p>
+        </header>
+
+        <div class="advice-grid">
+          <article class="advice-card" data-reveal>
+            <a href="conseils/preparer-nettoyage-fin-chantier-avignon.html">
+              <span class="advice-card__meta">Remise en état · 4 min</span>
+              <h3>Comment préparer un nettoyage de fin de chantier à Avignon ?</h3>
+              <p>Accès, surface, matériaux, photos et planning : les éléments qui permettent d'obtenir une proposition plus précise.</p>
+              <b>Lire le conseil →</b>
+            </a>
+          </article>
+          <article class="advice-card" data-reveal>
+            <a href="conseils/frequence-nettoyage-copropriete-avignon.html">
+              <span class="advice-card__meta">Copropriétés · 5 min</span>
+              <h3>Quelle fréquence prévoir pour le nettoyage d'une copropriété ?</h3>
+              <p>Halls, escaliers, ascenseurs, conteneurs et parkings : comment définir un rythme adapté aux usages réels.</p>
+              <b>Lire le conseil →</b>
+            </a>
+          </article>
+          <article class="advice-card" data-reveal>
+            <a href="conseils/nettoyage-haccp-cuisine-professionnelle-avignon.html">
+              <span class="advice-card__meta">Hygiène alimentaire · 5 min</span>
+              <h3>Nettoyage HACCP : quels points surveiller en cuisine professionnelle ?</h3>
+              <p>Surfaces de contact, sols, zones grasses, circulation et traçabilité : les points à cadrer avant l'intervention.</p>
+              <b>Lire le conseil →</b>
+            </a>
+          </article>
+        </div>
+
+        <a href="conseils.html" class="link-arrow latest-advice__link" data-reveal>
+          Voir tous les conseils
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M13 5l7 7-7 7"/>
+          </svg>
+        </a>
       </div>
     </section>
 
@@ -817,8 +864,8 @@
       <div class="footer__col">
         <h4>Entreprise</h4>
         <ul>
-          <li><a href="#histoire">Notre histoire</a></li>
-          <li><a href="#engagements">Engagements</a></li>
+          <li><a href="#qui-sommes-nous">Qui sommes-nous</a></li>
+          <li><a href="conseils.html">Conseils</a></li>
           <li><a href="#secteurs">Secteurs</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>

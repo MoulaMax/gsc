@@ -12,6 +12,8 @@ des demandes de devis à Avignon et dans le Vaucluse.
 - Le formulaire demande la surface, la ville, la fréquence, le délai et permet l'ajout de photos.
 - Chaque prestation dispose d'une page HTML statique avec un `title`, une description, un `h1`
   et une URL lisible propres.
+- La rubrique `Conseils` dispose d'une page index et d'articles générés depuis `blog-posts.js`.
+- Le formulaire de devis est branché à Static Forms avec upload multipart, honeypot, consentement RGPD et Altcha.
 
 ## Structure
 
@@ -21,6 +23,9 @@ gsc1/
 |-- service.html
 |-- service-detail.js
 |-- service-routes.js
+|-- blog-posts.js
+|-- conseils.html
+|-- conseils/
 |-- sitemap.xml
 |-- robots.txt
 |-- assets/
@@ -28,14 +33,17 @@ gsc1/
     `-- generate-static-pages.mjs
 ```
 
-`service.html` est le template partagé. `service-routes.js` centralise les URLs et
-les métadonnées SEO. Les pages statiques sont générées à partir de ces deux fichiers.
+`service.html` est le template partagé des pages prestations. `service-routes.js`
+centralise les URLs et les métadonnées SEO. `tools/blog-article.html` et
+`blog-posts.js` servent à générer la page `conseils.html` et les articles.
 
 ## Régénérer les pages statiques
 
 ```powershell
 node tools/generate-static-pages.mjs
 ```
+
+Cette commande met aussi à jour `sitemap.xml` et `robots.txt`.
 
 ## Tester en local
 
@@ -45,8 +53,8 @@ python -m http.server 8766 --bind 127.0.0.1
 
 Puis ouvrir `http://127.0.0.1:8766/index.html`.
 
-## À brancher avant la mise en ligne
+## À vérifier avant la mise en ligne
 
-- Connecter le formulaire de devis à un endpoint réel.
-- Définir l'adresse de réception des demandes.
-- Vérifier le domaine final utilisé dans les balises canonical et dans `sitemap.xml`.
+- Remplacer les placeholders visibles des blocs confiance : logos certifications, témoignages, références, photos équipe/chantiers.
+- Valider le contenu des articles conseils ou le remplacer par les contenus réels du propriétaire.
+- Vérifier le domaine final utilisé dans les balises canonical, `redirectTo` Static Forms et `sitemap.xml`.
