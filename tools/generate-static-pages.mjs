@@ -165,10 +165,7 @@ const blogIndex = `<!DOCTYPE html>
   <meta property="og:url" content="${domain}/conseils.html" />
   <meta property="og:image" content="${domain}/assets/services-parallax.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260604-3" />
+  <link rel="stylesheet" href="styles.css?v=20260604-rgpd-2" />
 </head>
 <body class="detail-page">
   <header class="nav is-scrolled" data-nav>

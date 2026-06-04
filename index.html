@@ -26,12 +26,7 @@
   <meta name="twitter:title" content="Entreprise de nettoyage professionnel à Avignon | GSC Copronet" />
   <meta name="twitter:description" content="Nettoyage médical, industriel, fin de chantier, vitrerie et entretien régulier dans le Vaucluse. Entreprise familiale depuis 1980." />
   <meta name="twitter:image" content="https://www.gsc-copronet.com/assets/services-parallax.jpg" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="styles.css?v=20260604-3" />
+  <link rel="stylesheet" href="styles.css?v=20260604-rgpd-2" />
 
   <!-- Données structurées : établissement local -->
   <script type="application/ld+json">
@@ -228,7 +223,7 @@
 
           <a class="hero__card-figure"
              href="https://www.google.com/maps?ftid=0x12b5ec472948362d:0x7155cd986455d924"
-             target="_blank" rel="noopener"
+             target="_blank" rel="noopener noreferrer"
              aria-label="Voir les locaux GSC Copronet sur Google Maps">
             <img src="assets/locaux-gsc.jpg" width="461" height="200" loading="lazy"
                  alt="Façade des locaux GSC Copronet, 13 av. de l'Orme Fourchu à Avignon" />
@@ -934,7 +929,7 @@
 
           <label class="form-consent">
             <input type="checkbox" name="consent" required />
-            <span>J'accepte que mes informations soient utilisées pour traiter ma demande, conformément à la <a href="confidentialite.html">politique de confidentialité</a>.</span>
+            <span>J'accepte que mes informations soient utilisées pour traiter ma demande de devis et être recontacté(e), conformément à la <a href="confidentialite.html">politique de confidentialité</a>.</span>
           </label>
 
           <!-- Altcha (CAPTCHA RGPD — Static Forms Pro).
@@ -952,7 +947,7 @@
               <path d="M5 12h14M13 5l7 7-7 7"/>
             </svg>
           </button>
-          <p class="form-note">Vos données ne sont utilisées que pour vous répondre. Aucun envoi commercial.</p>
+          <p class="form-note">Vos données servent uniquement à traiter votre demande. Aucun suivi publicitaire, aucun envoi commercial non sollicité.</p>
         </form>
 
       </div>
@@ -1012,6 +1007,6 @@
   </footer>
 
   <script src="script.js?v=20260602-gsc1-6" defer></script>
-  <script src="https://cdn.jsdelivr.net/gh/altcha-org/altcha/dist/altcha.min.js" type="module" defer></script>
+  <script src="assets/vendor/altcha.min.js" type="module" defer></script>
 </body>
 </html>

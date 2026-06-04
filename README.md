@@ -14,6 +14,8 @@ des demandes de devis à Avignon et dans le Vaucluse.
   et une URL lisible propres.
 - La rubrique `Conseils` dispose d'une page index et d'articles générés depuis `blog-posts.js`.
 - Le formulaire de devis est branché à Static Forms avec upload multipart, honeypot, consentement RGPD et Altcha.
+- Les polices et le script Altcha sont servis localement ; Google Maps, Instagram et LinkedIn restent de simples liens externes.
+- Aucun outil d'audience, cookie publicitaire ou traceur n'est chargé par défaut, donc aucun bandeau cookie n'est nécessaire à ce stade.
 
 ## Structure
 
@@ -58,3 +60,4 @@ Puis ouvrir `http://127.0.0.1:8766/index.html`.
 - Remplacer les placeholders visibles des blocs confiance : logos certifications, témoignages, références, photos équipe/chantiers.
 - Valider le contenu des articles conseils ou le remplacer par les contenus réels du propriétaire.
 - Vérifier le domaine final utilisé dans les balises canonical, `redirectTo` Static Forms et `sitemap.xml`.
+- Compléter ou confirmer les informations légales sensibles avant production : hébergeur, direction de publication, forme juridique, capital et TVA.
