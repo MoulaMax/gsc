@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=20260602-gsc1-7" />
+  <link rel="stylesheet" href="styles.css?v=20260602-gsc1-8" />
 
   <!-- Données structurées : établissement local -->
   <script type="application/ld+json">
@@ -655,13 +655,31 @@
           </ul>
         </div>
 
+        <!--
+          Formulaire de devis — backend : Static Forms (staticforms.dev)
+          ➜ Remplacer la valeur de <input name="apiKey"> par la clé du
+             dashboard Static Forms (offre Pro). C'est la SEULE chose
+             à brancher manuellement.
+          ➜ Activer Altcha dans le dashboard Static Forms, puis coller
+             le bloc <altcha-widget …> à l'emplacement marqué plus bas.
+        -->
         <form class="contact__form" data-reveal autocomplete="off"
-              action="contact.php" method="post" enctype="multipart/form-data"
-              data-contact-form>
-          <!-- Anti-spam (honeypot) : invisible, laissé vide par un humain -->
+              action="https://api.staticforms.dev/submit"
+              method="POST"
+              enctype="multipart/form-data">
+
+          <!-- Configuration Static Forms (champs cachés) -->
+          <input type="hidden" name="apiKey"     value="VOTRE_CLE_STATIC_FORMS_ICI" />
+          <input type="hidden" name="subject"    value="[Site] Demande de devis — GSC Copronet" />
+          <input type="hidden" name="replyTo"    value="@" />
+          <input type="hidden" name="redirectTo" value="https://www.gsc-copronet.com/merci.html" />
+
+          <!-- Anti-spam (honeypot Static Forms) : invisible pour un humain,
+               rempli par les bots → soumission rejetée silencieusement.
+               type="text" + masquage CSS (PAS type="hidden", ignoré par les bots). -->
           <div class="form-hp" aria-hidden="true">
             <label>Ne remplissez pas ce champ
-              <input type="text" name="website" tabindex="-1" autocomplete="off" />
+              <input type="text" name="honeypot_url" tabindex="-1" autocomplete="off" />
             </label>
           </div>
 
@@ -740,8 +758,8 @@
 
           <label class="form-full">
             <span>Photos du site</span>
-            <input type="file" name="photos" accept="image/*" multiple />
-            <small class="form-hint">Vous pouvez joindre plusieurs photos pour nous aider à évaluer l’intervention.</small>
+            <input type="file" name="photos[]" accept="image/*" multiple />
+            <small class="form-hint">Jusqu’à 5 Mo par envoi (offre Static Forms Pro).</small>
           </label>
 
           <label class="form-full">
@@ -754,10 +772,16 @@
             <span>J'accepte que mes informations soient utilisées pour traiter ma demande, conformément à la <a href="confidentialite.html">politique de confidentialité</a>.</span>
           </label>
 
-          <div class="form-status" data-form-status role="status" aria-live="polite" hidden></div>
+          <!-- ====== ALTCHA (CAPTCHA RGPD — offre Static Forms Pro) ======
+               À ACTIVER : dans le dashboard Static Forms, section « ALTCHA »,
+               cliquer sur « Enable Altcha ». Le dashboard fournit alors le
+               balisage exact (composant <altcha-widget …> + script à charger)
+               à coller ICI, juste au-dessus du bouton "Envoyer".
+               Doc : https://www.staticforms.dev/docs/altcha
+          -->
 
-          <button type="submit" class="btn btn--primary btn--lg btn--full" data-form-submit>
-            <span data-form-submit-label>Envoyer ma demande</span>
+          <button type="submit" class="btn btn--primary btn--lg btn--full">
+            Envoyer ma demande
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M5 12h14M13 5l7 7-7 7"/>
             </svg>
@@ -820,6 +844,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20260602-gsc1-5" defer></script>
+  <script src="script.js?v=20260602-gsc1-6" defer></script>
 </body>
 </html>

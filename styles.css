@@ -1387,27 +1387,6 @@ a.contact__info-value:hover { color: var(--accent); border-bottom-color: var(--a
   text-underline-offset: 2px;
 }
 
-/* Statut d'envoi (succès / erreur) */
-.form-status {
-  margin: 0 0 18px;
-  padding: 14px 18px;
-  border-radius: var(--radius-sm);
-  font-size: 14.5px;
-  line-height: 1.5;
-}
-
-.form-status--ok {
-  background: var(--accent-soft);
-  color: var(--accent-deep);
-  border: 1px solid var(--accent);
-}
-
-.form-status--error {
-  background: #FBEAE5;
-  color: #8A2A1B;
-  border: 1px solid #E0A99B;
-}
-
 /* =====================================================
    NOTICE (page de remerciement)
    ===================================================== */

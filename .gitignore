@@ -1,6 +1,3 @@
-# Configuration locale d'envoi (contient des identifiants SMTP) — NE JAMAIS versionner
-contact.config.local.php
-
-# Divers
+# Divers (laissé au cas où)
 .DS_Store
 *.log
