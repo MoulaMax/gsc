@@ -356,11 +356,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 @media (max-width: 1080px) {
   .nav__menu { display: none; }
   .nav__phone span { display: none; }
-}
-
-@media (max-width: 720px) {
-  .nav__phone { display: none; }
-  .nav__cta { display: none; }
   .nav__toggle { display: flex; }
   .nav__menu {
     position: fixed;
@@ -391,6 +386,11 @@ ul { margin: 0; padding: 0; list-style: none; }
     opacity: 1;
   }
   .nav__menu a::after { display: none; }
+}
+
+@media (max-width: 720px) {
+  .nav__phone { display: none; }
+  .nav__cta { display: none; }
 }
 
 /* =====================================================
