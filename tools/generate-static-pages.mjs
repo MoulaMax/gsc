@@ -14,6 +14,7 @@ vm.runInNewContext(blogSource, context);
 
 const routes = context.window.GSC_SERVICE_ROUTES;
 const posts = context.window.GSC_BLOG_POSTS || [];
+const faqByPath = context.window.GSC_BLOG_FAQ || {};
 
 const escapeHtml = value => String(value ?? '')
   .replaceAll('&', '&amp;')
@@ -55,9 +56,23 @@ const renderArticleContent = post => post.sections.map(section => `
             ${section.paragraphs.map(paragraph => `<p>${escapeText(paragraph)}</p>`).join('\n            ')}
           </section>`).join('\n');
 
+const renderFaqBlock = faq => {
+  if (!faq || !faq.length) return '';
+  const items = faq.map(({ q, a }) => `
+            <details class="faq-item">
+              <summary>${escapeText(q)}</summary>
+              <p>${escapeText(a)}</p>
+            </details>`).join('');
+  return `
+        <section class="article-faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">Questions liées</h2>${items}
+        </section>`;
+};
+
 for (const post of posts) {
   const canonical = `${domain}/${post.path}`;
   const imageUrl = `${domain}/${post.image}`;
+  const faq = faqByPath[post.path];
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -80,6 +95,21 @@ for (const post of posts) {
     },
     mainEntityOfPage: canonical
   };
+  const schemaScripts = [
+    `<script type="application/ld+json">\n  ${JSON.stringify(schema, null, 2)}\n  </script>`
+  ];
+  if (faq && faq.length) {
+    const faqSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map(({ q, a }) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: a }
+      }))
+    };
+    schemaScripts.push(`<script type="application/ld+json">\n  ${JSON.stringify(faqSchema, null, 2)}\n  </script>`);
+  }
 
   const page = articleTemplate
     .replace('<title>Article conseil | GSC Copronet</title>', `<title>${escapeHtml(post.title)} | GSC Copronet</title>`)
@@ -94,14 +124,14 @@ for (const post of posts) {
     .replace('<meta name="twitter:title" content="Article conseil | GSC Copronet" />', `<meta name="twitter:title" content="${escapeHtml(post.title)} | GSC Copronet" />`)
     .replace('<meta name="twitter:description" content="Conseil GSC Copronet pour organiser vos prestations de nettoyage professionnel." />', `<meta name="twitter:description" content="${escapeHtml(post.description)}" />`)
     .replace('<meta name="twitter:image" content="https://www.gsc-copronet.com/assets/services-parallax.jpg" />', `<meta name="twitter:image" content="${imageUrl}" />`)
-    .replace('<!-- ARTICLE_SCHEMA -->', `<script type="application/ld+json">\n  ${JSON.stringify(schema, null, 2)}\n  </script>`)
+    .replace('<!-- ARTICLE_SCHEMA -->', schemaScripts.join('\n  '))
     .replace('<!-- ARTICLE_H1 -->', escapeText(post.h1))
     .replace('<!-- ARTICLE_EXCERPT -->', escapeText(post.excerpt))
     .replace('<!-- ARTICLE_CATEGORY -->', escapeText(post.category))
     .replace('<!-- ARTICLE_DATE -->', formatDate(post.date))
     .replace('<!-- ARTICLE_READING_TIME -->', escapeText(post.readingTime))
     .replace('<img src="../assets/services-parallax.jpg" alt="" width="900" height="560" loading="lazy" decoding="async" />', `<img src="../${escapeHtml(post.image)}" alt="${escapeHtml(post.alt)}" width="900" height="560" loading="lazy" decoding="async" />`)
-    .replace('          <!-- ARTICLE_CONTENT -->', renderArticleContent(post));
+    .replace('          <!-- ARTICLE_CONTENT -->', renderArticleContent(post) + renderFaqBlock(faq));
 
   await writeFile(new URL(post.path, root), page, 'utf8');
 }
@@ -138,7 +168,7 @@ const blogIndex = `<!DOCTYPE html>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260604-2" />
+  <link rel="stylesheet" href="styles.css?v=20260604-3" />
 </head>
 <body class="detail-page">
   <header class="nav is-scrolled" data-nav>
@@ -158,6 +188,7 @@ const blogIndex = `<!DOCTYPE html>
         <a href="index.html#multiservices">Multiservices</a>
         <a href="index.html#secteurs">Secteurs</a>
         <a href="index.html#qui-sommes-nous">Qui sommes-nous</a>
+        <a href="index.html#faq">FAQ</a>
         <a href="conseils.html">Conseils</a>
       </nav>
       <div class="nav__actions">
@@ -198,7 +229,8 @@ ${renderPostCards(posts)}
           <li><a href="index.html#multiservices">Multiservices</a></li>
           <li><a href="index.html#secteurs">Secteurs</a></li>
           <li><a href="index.html#qui-sommes-nous">Qui sommes-nous</a></li>
-          <li><a href="conseils.html">Conseils</a></li>
+          <li><a href="index.html#faq">FAQ</a>
+        <a href="conseils.html">Conseils</a></li>
         </ul>
       </div>
       <div class="footer__col">

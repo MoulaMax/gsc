@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=20260604-2" />
+  <link rel="stylesheet" href="styles.css?v=20260604-3" />
 
   <!-- Données structurées : établissement local -->
   <script type="application/ld+json">
@@ -67,6 +67,64 @@
     "description": "Entreprise familiale de propreté professionnelle à Avignon, spécialisée dans le nettoyage B2B, l'entretien régulier, les interventions techniques et les multiservices dans le Vaucluse."
   }
   </script>
+
+  <!-- Données structurées : questions fréquentes (FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Sur quelle zone géographique GSC Copronet intervient-elle ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GSC Copronet intervient à Avignon et dans tout le Vaucluse, ainsi que dans les départements limitrophes pour les chantiers ponctuels. Nos équipes sont basées au siège, 13 avenue de l'Orme Fourchu à Avignon."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Sous quel délai recevez-vous une réponse après une demande de devis ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nous revenons vers vous sous 48 heures ouvrées avec une proposition adaptée. Pour les besoins urgents, nous vous recommandons un appel direct au 04 90 80 05 05."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quels types de sites GSC Copronet entretient-elle ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Copropriétés, bureaux, cabinets médicaux, commerces, ateliers, industries agroalimentaires, parkings et collectivités. Nos prestations couvrent l'entretien régulier comme les interventions techniques ponctuelles (fin de chantier, vitrerie en hauteur, traitement des sols)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Êtes-vous une entreprise certifiée ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. GSC Copronet est qualifiée QUALIPROPRE et adhère à la FEP (Fédération des Entreprises de Propreté, d'Hygiène et Services Associés), les références reconnues de notre branche."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quels horaires d'intervention proposez-vous ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nos équipes interviennent en journée comme tôt le matin ou en soirée, selon les contraintes de votre site. Nous adaptons les horaires aux usages des lieux (commerces avant ouverture, bureaux hors présence, ateliers en fin de production)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Les produits utilisés sont-ils respectueux de l'environnement ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nous privilégions les produits écolabellisés lorsque cela est compatible avec l'usage du site. Nos méthodes (pré-imprégnation, dosage maîtrisé, optimisation des tournées) limitent par ailleurs la consommation de produits et d'eau."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -89,6 +147,7 @@
         <a href="#multiservices">Multiservices</a>
         <a href="#secteurs">Secteurs</a>
         <a href="#qui-sommes-nous">Qui sommes-nous</a>
+        <a href="#faq">FAQ</a>
         <a href="conseils.html">Conseils</a>
       </nav>
 
@@ -645,6 +704,58 @@
       </div>
     </section>
 
+    <!-- ============== QUESTIONS FRÉQUENTES ============== -->
+    <section class="faq" id="faq">
+      <div class="container faq__inner">
+        <header class="section-head" data-reveal>
+          <span class="eyebrow">Questions fréquentes</span>
+          <h2 class="section-title">
+            Vos questions, <em>nos réponses</em>.
+          </h2>
+          <p class="section-lead">
+            Les réponses claires aux questions que l’on nous pose le plus souvent — sur les délais, les zones, les certifications et notre façon de travailler.
+          </p>
+        </header>
+
+        <div class="faq__list" data-reveal>
+          <details class="faq-item">
+            <summary>Sur quelle zone géographique GSC Copronet intervient-elle ?</summary>
+            <p>GSC Copronet intervient à Avignon et dans tout le Vaucluse, ainsi que dans les départements limitrophes pour les chantiers ponctuels. Nos équipes sont basées au siège, 13 avenue de l’Orme Fourchu à Avignon.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Sous quel délai recevez-vous une réponse après une demande de devis ?</summary>
+            <p>Nous revenons vers vous sous 48 heures ouvrées avec une proposition adaptée. Pour les besoins urgents, un appel au <a href="tel:+33490800505">04 90 80 05 05</a> est souvent le plus rapide.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Quels types de sites GSC Copronet entretient-elle ?</summary>
+            <p>Copropriétés, bureaux, cabinets médicaux, commerces, ateliers, industries agroalimentaires, parkings et collectivités. Nos prestations couvrent l’entretien régulier comme les interventions techniques ponctuelles (fin de chantier, vitrerie en hauteur, traitement des sols).</p>
+          </details>
+          <details class="faq-item">
+            <summary>Êtes-vous une entreprise certifiée ?</summary>
+            <p>Oui. GSC Copronet est qualifiée <strong>QUALIPROPRE</strong> et adhère à la <strong>FEP</strong> (Fédération des Entreprises de Propreté, d’Hygiène et Services Associés), les références reconnues de notre branche.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Quels horaires d’intervention proposez-vous ?</summary>
+            <p>Nos équipes interviennent en journée comme tôt le matin ou en soirée, selon les contraintes de votre site. Nous adaptons les horaires aux usages des lieux (commerces avant ouverture, bureaux hors présence, ateliers en fin de production).</p>
+          </details>
+          <details class="faq-item">
+            <summary>Les produits utilisés sont-ils respectueux de l’environnement ?</summary>
+            <p>Nous privilégions les produits écolabellisés lorsque cela est compatible avec l’usage du site. Nos méthodes (pré-imprégnation, dosage maîtrisé, optimisation des tournées) limitent par ailleurs la consommation de produits et d’eau.</p>
+          </details>
+        </div>
+
+        <p class="faq__more" data-reveal>
+          D’autres questions ?
+          <a href="conseils.html" class="link-arrow">
+            Consultez nos conseils détaillés
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </p>
+      </div>
+    </section>
+
     <!-- ============== CONTACT / DEVIS ============== -->
     <section class="contact" id="contact">
       <div class="container contact__inner">
@@ -872,7 +983,8 @@
         <h4>Entreprise</h4>
         <ul>
           <li><a href="#qui-sommes-nous">Qui sommes-nous</a></li>
-          <li><a href="conseils.html">Conseils</a></li>
+          <li><a href="#faq">FAQ</a>
+        <a href="conseils.html">Conseils</a></li>
           <li><a href="#secteurs">Secteurs</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>

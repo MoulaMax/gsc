@@ -304,5 +304,189 @@ window.GSC_BLOG_POSTS = [
         ]
       }
     ]
+  },
+  {
+    slug: 'budget-nettoyage-copropriete-avignon',
+    path: 'conseils/budget-nettoyage-copropriete-avignon.html',
+    title: 'Quel budget prévoir pour le nettoyage d’une copropriété à Avignon ?',
+    description: 'Surface des parties communes, fréquence des passages, vitrerie et conteneurs : les critères qui font varier le devis d’entretien d’une copropriété dans le Vaucluse.',
+    h1: 'Budget de nettoyage d’une copropriété : les critères qui comptent',
+    category: 'Copropriétés',
+    date: '2026-06-05',
+    readingTime: '5 min',
+    image: 'assets/services/parties-communes.jpg',
+    alt: 'Hall d’immeuble entretenu par une équipe GSC Copronet',
+    excerpt: 'Au-delà du prix au m², plusieurs paramètres concrets influencent le coût réel d’un contrat d’entretien d’immeuble.',
+    sections: [
+      {
+        heading: 'Le périmètre couvert par le contrat',
+        paragraphs: [
+          'Halls, escaliers, paliers, ascenseurs, locaux à ordures ménagères, parkings, vitrerie des entrées : la liste des zones réellement entretenues conditionne le volume horaire et donc le budget.',
+          'Préciser le périmètre dès le départ évite les ajustements ultérieurs et permet une comparaison honnête entre devis.'
+        ]
+      },
+      {
+        heading: 'La fréquence des passages',
+        paragraphs: [
+          'Une copropriété très fréquentée (centre-ville, immeubles de plus de 30 lots) demandera généralement 3 à 5 passages par semaine. Un petit immeuble résidentiel peut se satisfaire d’un passage hebdomadaire.',
+          'Le bon dimensionnement se règle souvent dans les premières semaines : on observe l’usage réel, puis on ajuste à la baisse ou à la hausse.'
+        ]
+      },
+      {
+        heading: 'Les prestations ponctuelles complémentaires',
+        paragraphs: [
+          'Vitrerie en hauteur, lavage des conteneurs, désinfection des locaux poubelles, enlèvement d’encombrants ou nettoyage approfondi des moquettes : ces opérations peuvent être intégrées au contrat ou facturées séparément.',
+          'Les regrouper dans un même contrat simplifie la gestion et permet en général d’obtenir un meilleur tarif global.'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'choisir-entreprise-nettoyage-industriel-avignon',
+    path: 'conseils/choisir-entreprise-nettoyage-industriel-avignon.html',
+    title: 'Comment choisir une entreprise de nettoyage industriel à Avignon ?',
+    description: 'Plan de prévention, matériel mécanisé, flexibilité horaire, fidélisation des équipes : les critères concrets pour sélectionner un prestataire de nettoyage industriel dans le Vaucluse.',
+    h1: 'Nettoyage industriel : les critères pour choisir le bon prestataire',
+    category: 'Industrie',
+    date: '2026-06-05',
+    readingTime: '6 min',
+    image: 'assets/services/ateliers-usines.jpg',
+    alt: 'Sol d’atelier industriel entretenu avec autolaveuse',
+    excerpt: 'Au-delà du tarif, plusieurs signaux concrets distinguent un vrai professionnel du nettoyage industriel.',
+    sections: [
+      {
+        heading: 'L’expérience des environnements de production',
+        paragraphs: [
+          'Un atelier ou une chaîne de production impose des contraintes spécifiques : horaires décalés, accès réglementés, plans de prévention, équipements de protection. Un prestataire habitué à ces environnements gagne du temps et limite les risques.',
+          'Demandez quelques références dans des secteurs similaires au vôtre : industrie, agroalimentaire, logistique, ateliers techniques.'
+        ]
+      },
+      {
+        heading: 'Le matériel mobilisé sur site',
+        paragraphs: [
+          'Autolaveuses, monobrosses, nettoyeurs haute pression, équipements pour travail en hauteur : la qualité et la disponibilité du matériel font la différence sur les grandes surfaces et les zones encrassées.',
+          'Un prestataire sérieux saura aussi expliquer ses choix de produits et leur compatibilité avec vos équipements.'
+        ]
+      },
+      {
+        heading: 'La fidélisation et la formation des équipes',
+        paragraphs: [
+          'Le turn-over est une plaie du secteur. Un prestataire qui fidélise ses agents apporte une connaissance fine du site, une qualité plus régulière et moins de mauvaises surprises au quotidien.',
+          'Renseignez-vous sur la formation des agents (gestes techniques, sécurité, protocoles) et sur la stabilité des équipes affectées à votre site.'
+        ]
+      },
+      {
+        heading: 'La capacité à co-construire le cahier des charges',
+        paragraphs: [
+          'Un bon prestataire ne se contente pas de chiffrer votre demande : il visite, écoute, propose des ajustements et vous aide à dimensionner le besoin au plus juste.',
+          'Cette posture conseil est souvent ce qui distingue un partenaire durable d’un simple exécutant.'
+        ]
+      }
+    ]
   }
 ];
+
+/* ============================================================
+   FAQ associée à chaque article (clé = post.path).
+   Chaque entrée : { question, answer } — utilisée pour
+   produire un schéma JSON-LD FAQPage et un bloc visible
+   "Questions liées" à la fin de l'article.
+   ============================================================ */
+window.GSC_BLOG_FAQ = {
+  'conseils/pourquoi-faire-appel-entreprise-nettoyage-avignon.html': [
+    {
+      q: 'Quel est l’intérêt d’externaliser le nettoyage de ses locaux ?',
+      a: 'Confier l’entretien à une entreprise spécialisée permet de bénéficier de méthodes éprouvées, de matériel adapté et d’une continuité de service, tout en libérant vos équipes des tâches qui ne relèvent pas de leur cœur de métier.'
+    },
+    {
+      q: 'Une petite structure peut-elle faire appel à une entreprise de nettoyage ?',
+      a: 'Oui. La plupart des prestataires adaptent leurs contrats au volume des locaux, depuis un seul cabinet de 60 m² jusqu’à des immeubles entiers. Le contrat est dimensionné selon la fréquence souhaitée.'
+    }
+  ],
+  'conseils/pre-impregnation-nettoyage-professionnel.html': [
+    {
+      q: 'La pré-imprégnation est-elle réservée aux environnements médicaux ?',
+      a: 'Non. Cette méthode est particulièrement adaptée aux environnements sensibles (santé, alimentaire), mais elle apporte les mêmes bénéfices dans des bureaux, copropriétés ou commerces : meilleur dosage, moins d’eau utilisée et confort accru pour les agents.'
+    },
+    {
+      q: 'Cette méthode est-elle plus coûteuse ?',
+      a: 'À l’usage, elle réduit la consommation de produits et limite les manipulations inutiles. Le surcoût éventuel des consommables est en général compensé par les économies de produit et le gain de qualité.'
+    }
+  ],
+  'conseils/fep-proprete-services-associes.html': [
+    {
+      q: 'La FEP est-elle obligatoire pour une entreprise de propreté ?',
+      a: 'Non. L’adhésion à la Fédération des Entreprises de Propreté est volontaire. C’est un repère de sérieux pour les clients, qui s’appuie sur des engagements et des outils communs à la branche.'
+    }
+  ],
+  'conseils/entreprise-multiservices-reamenagement-bureaux-avignon.html': [
+    {
+      q: 'Peut-on faire évoluer ses bureaux sans gros chantier ?',
+      a: 'Oui. Cloisons amovibles, faux plafonds, déplacements de mobilier, films adhésifs, peinture, électricité légère : un prestataire multiservices peut faire évoluer un espace par étapes, sans interrompre durablement votre activité.'
+    },
+    {
+      q: 'Pourquoi confier le multiservice à son prestataire de nettoyage ?',
+      a: 'Vous centralisez les demandes auprès d’un interlocuteur unique, qui connaît vos bâtiments, vos priorités et vos contraintes horaires. Cela simplifie la coordination et accélère les interventions courantes.'
+    }
+  ],
+  'conseils/nettoyage-moquette-sols-professionnels-avignon.html': [
+    {
+      q: 'À quelle fréquence faut-il nettoyer une moquette de bureau ?',
+      a: 'Un aspirage quotidien dans les zones de passage, un détachage régulier et un nettoyage approfondi (injection-extraction ou poudre) une à deux fois par an selon la fréquentation.'
+    },
+    {
+      q: 'Faut-il protéger un sol neuf avant utilisation ?',
+      a: 'Oui pour la plupart des sols sensibles (pierre, terre cuite, parquet, certains thermoplastiques). Un traitement de protection au démarrage évite l’incrustation des salissures et facilite l’entretien courant.'
+    }
+  ],
+  'conseils/preparer-nettoyage-fin-chantier-avignon.html': [
+    {
+      q: 'Quand demander une visite pour un nettoyage de fin de chantier ?',
+      a: 'Idéalement 5 à 10 jours avant la fin annoncée des travaux. Cela permet de caler la planification, d’adapter le matériel et d’éviter les interventions de dernière minute.'
+    },
+    {
+      q: 'Quelles informations transmettre au prestataire ?',
+      a: 'La nature des travaux, les surfaces concernées, les matériaux des sols, les accès véhicule, les contraintes horaires et quelques photos du chantier — c’est généralement suffisant pour établir un devis fiable.'
+    }
+  ],
+  'conseils/frequence-nettoyage-copropriete-avignon.html': [
+    {
+      q: 'Combien de passages prévoir dans une copropriété résidentielle ?',
+      a: 'En moyenne 1 à 3 passages par semaine selon la taille de l’immeuble et la fréquentation. Les grandes copropriétés de centre-ville peuvent demander un passage quotidien ; les petits immeubles, un passage hebdomadaire suffit souvent.'
+    },
+    {
+      q: 'Peut-on ajuster la fréquence après la mise en place ?',
+      a: 'Oui. Les premières semaines d’un contrat servent à observer l’usage réel et à ajuster, à la hausse ou à la baisse, le nombre de passages et leur durée.'
+    }
+  ],
+  'conseils/nettoyage-haccp-cuisine-professionnelle-avignon.html': [
+    {
+      q: 'Quelle est la différence entre nettoyage et désinfection en cuisine ?',
+      a: 'Le nettoyage retire les salissures visibles ; la désinfection, qui intervient sur une surface déjà propre, élimine les micro-organismes selon des dosages et temps de contact précis. Les deux opérations sont distinctes et complémentaires.'
+    },
+    {
+      q: 'La méthode HACCP s’applique-t-elle aux petites cuisines ?',
+      a: 'Oui. La démarche HACCP s’applique dès qu’il y a manipulation, transformation ou conservation de denrées. Son ampleur est adaptée à la taille et à l’activité de l’établissement.'
+    }
+  ],
+  'conseils/budget-nettoyage-copropriete-avignon.html': [
+    {
+      q: 'Quel est l’ordre de grandeur d’un contrat copropriété ?',
+      a: 'Le budget dépend de la taille de l’immeuble, du nombre de passages et des prestations complémentaires (vitrerie, conteneurs, parkings). Une visite sur site permet d’établir un devis personnalisé et adapté à la réalité du lieu.'
+    },
+    {
+      q: 'Faut-il prévoir un budget vitrerie séparé ?',
+      a: 'La vitrerie des entrées est souvent intégrée au contrat courant. Les façades vitrées, verrières et baies en hauteur sont plutôt facturées par passage planifié (1 à 2 fois par an, selon l’exposition).'
+    }
+  ],
+  'conseils/choisir-entreprise-nettoyage-industriel-avignon.html': [
+    {
+      q: 'Combien de devis demander avant de choisir ?',
+      a: 'Deux ou trois devis suffisent en général. Au-delà, la comparaison devient lourde sans apporter d’informations supplémentaires. Mieux vaut comparer en profondeur 2-3 propositions sérieuses.'
+    },
+    {
+      q: 'Que doit contenir un cahier des charges de nettoyage industriel ?',
+      a: 'Le périmètre des zones, les surfaces, les contraintes horaires, les protocoles de sécurité du site, le matériel attendu, les fréquences et la liste des consommables. Plus c’est précis, plus les devis seront comparables.'
+    }
+  ]
+};
