@@ -4,76 +4,23 @@
    Typo    : Inter Tight (display) + Inter (texte), servis en local
    ===================================================== */
 
+/* Fontes auto-hébergées — variable WOFF2 (couvre toutes les graisses 100-900) :
+   2 fichiers au total (~96 Ko), ~30x plus compact qu'une livraison TTF
+   par graisse. Aucune connexion à fonts.googleapis.com. */
 @font-face {
   font-family: 'Inter';
+  src: url('assets/fonts/inter-variable.woff2') format('woff2');
+  font-weight: 100 900;
   font-style: normal;
-  font-weight: 300;
   font-display: swap;
-  src: url('assets/fonts/inter-1.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('assets/fonts/inter-2.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('assets/fonts/inter-3.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('assets/fonts/inter-4.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('assets/fonts/inter-5.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Inter Tight';
+  src: url('assets/fonts/inter-tight-variable.woff2') format('woff2');
+  font-weight: 100 900;
   font-style: normal;
-  font-weight: 400;
   font-display: swap;
-  src: url('assets/fonts/intertight-6.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter Tight';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('assets/fonts/intertight-7.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter Tight';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('assets/fonts/intertight-8.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter Tight';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('assets/fonts/intertight-9.ttf') format('truetype');
 }
 
 :root {

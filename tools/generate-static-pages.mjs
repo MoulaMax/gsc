@@ -165,7 +165,7 @@ const blogIndex = `<!DOCTYPE html>
   <meta property="og:url" content="${domain}/conseils.html" />
   <meta property="og:image" content="${domain}/assets/services-parallax.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="styles.css?v=20260605-mobile-1" />
+  <link rel="stylesheet" href="styles.css?v=20260605-2" />
 </head>
 <body class="detail-page">
   <header class="nav is-scrolled" data-nav>
