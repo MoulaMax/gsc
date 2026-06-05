@@ -160,7 +160,7 @@ for (const post of posts) {
     .replace('<!-- ARTICLE_CATEGORY -->', escapeText(post.category))
     .replace('<!-- ARTICLE_DATE -->', formatDate(post.date))
     .replace('<!-- ARTICLE_READING_TIME -->', escapeText(post.readingTime))
-    .replace('<img src="../assets/og-image.svg" alt="" width="900" height="560" loading="lazy" decoding="async" />', `<img src="../${escapeHtml(post.image)}" alt="${escapeHtml(post.alt)}" width="900" height="560" loading="lazy" decoding="async" />`)
+    .replace('<img src="../assets/og-image.svg" alt="" width="900" height="560" loading="lazy" decoding="async" />', `<picture><source srcset="../${escapeHtml(post.image.replace(/\.jpg$/, '.webp'))}" type="image/webp"><img src="../${escapeHtml(post.image)}" alt="${escapeHtml(post.alt)}" width="900" height="560" loading="lazy" decoding="async" /></picture>`)
     .replace('          <!-- ARTICLE_CONTENT -->', renderArticleContent(post) + renderFaqBlock(faq));
 
   await writeFile(new URL(post.path, root), page, 'utf8');
