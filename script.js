@@ -210,4 +210,17 @@
   const yearEl = document.querySelector('[data-year]');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ---------- Bandeau "aucun cookie" ----------
+     Sans stockage (conformément au brief : pas de localStorage/sessionStorage).
+     Auto-fermeture après 10 s, ou clic sur le bouton ×. */
+  const cookieNotice = document.querySelector('[data-cookie-notice]');
+  if (cookieNotice) {
+    const hide = () => {
+      cookieNotice.classList.add('is-hidden');
+      setTimeout(() => cookieNotice.remove(), 400);
+    };
+    cookieNotice.querySelector('[data-cookie-notice-close]')?.addEventListener('click', hide);
+    setTimeout(hide, 10000);
+  }
+
 })();
