@@ -29,6 +29,35 @@ const formatDate = value => new Intl.DateTimeFormat('fr-FR', {
   year: 'numeric'
 }).format(new Date(value));
 
+const buildServiceSchema = (route, canonical) => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: route.h1 || route.title,
+    description: route.description,
+    serviceType: route.kind === 'sector' ? 'Secteur accompagné' : 'Prestation de propreté professionnelle',
+    url: canonical,
+    areaServed: { '@type': 'AdministrativeArea', name: 'Vaucluse', containedInPlace: { '@type': 'Country', name: 'France' } },
+    provider: {
+      '@type': 'ProfessionalService',
+      name: 'GSC Copronet',
+      legalName: 'Arnaud Propreté',
+      telephone: '+33490800505',
+      email: 'a.arnaud@gsc-copronet.com',
+      url: `${domain}/`,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: "13 avenue de l'Orme Fourchu",
+        postalCode: '84000',
+        addressLocality: 'Avignon',
+        addressRegion: 'Vaucluse',
+        addressCountry: 'FR'
+      }
+    }
+  };
+  return `<script type="application/ld+json">\n  ${JSON.stringify(schema, null, 2)}\n  </script>`;
+};
+
 for (const [slug, route] of Object.entries(routes)) {
   const canonical = `${domain}/${route.path}`;
   const page = serviceTemplate
@@ -42,6 +71,7 @@ for (const [slug, route] of Object.entries(routes)) {
     .replace('<meta property="og:url" content="https://www.gsc-copronet.com/service.html" />', `<meta property="og:url" content="${canonical}" />`)
     .replace('<meta name="twitter:title" content="Service professionnel | GSC Copronet" />', `<meta name="twitter:title" content="${escapeHtml(route.title)}" />`)
     .replace('<meta name="twitter:description" content="Découvrez les prestations de propreté et de maintenance proposées par GSC Copronet à Avignon et dans le Vaucluse." />', `<meta name="twitter:description" content="${escapeHtml(route.description)}" />`)
+    .replace('<!-- SERVICE_SCHEMA -->', buildServiceSchema(route, canonical))
     .replace('<body class="detail-page">', `<body class="detail-page" data-service-slug="${slug}">`)
     .replace('<h1 data-service-title>Service professionnel</h1>', `<h1 data-service-title>${escapeHtml(route.h1)}</h1>`);
 
@@ -120,17 +150,17 @@ for (const post of posts) {
     .replace('<meta property="og:title" content="Article conseil | GSC Copronet" />', `<meta property="og:title" content="${escapeHtml(post.title)} | GSC Copronet" />`)
     .replace('<meta property="og:description" content="Conseil GSC Copronet pour organiser vos prestations de nettoyage professionnel." />', `<meta property="og:description" content="${escapeHtml(post.description)}" />`)
     .replace('<meta property="og:url" content="https://www.gsc-copronet.com/conseils/" />', `<meta property="og:url" content="${canonical}" />`)
-    .replace('<meta property="og:image" content="https://www.gsc-copronet.com/assets/services-parallax.jpg" />', `<meta property="og:image" content="${imageUrl}" />`)
+    .replace('<meta property="og:image" content="https://www.gsc-copronet.com/assets/og-image.svg" />', `<meta property="og:image" content="${imageUrl}" />`)
     .replace('<meta name="twitter:title" content="Article conseil | GSC Copronet" />', `<meta name="twitter:title" content="${escapeHtml(post.title)} | GSC Copronet" />`)
     .replace('<meta name="twitter:description" content="Conseil GSC Copronet pour organiser vos prestations de nettoyage professionnel." />', `<meta name="twitter:description" content="${escapeHtml(post.description)}" />`)
-    .replace('<meta name="twitter:image" content="https://www.gsc-copronet.com/assets/services-parallax.jpg" />', `<meta name="twitter:image" content="${imageUrl}" />`)
+    .replace('<meta name="twitter:image" content="https://www.gsc-copronet.com/assets/og-image.svg" />', `<meta name="twitter:image" content="${imageUrl}" />`)
     .replace('<!-- ARTICLE_SCHEMA -->', schemaScripts.join('\n  '))
     .replace('<!-- ARTICLE_H1 -->', escapeText(post.h1))
     .replace('<!-- ARTICLE_EXCERPT -->', escapeText(post.excerpt))
     .replace('<!-- ARTICLE_CATEGORY -->', escapeText(post.category))
     .replace('<!-- ARTICLE_DATE -->', formatDate(post.date))
     .replace('<!-- ARTICLE_READING_TIME -->', escapeText(post.readingTime))
-    .replace('<img src="../assets/services-parallax.jpg" alt="" width="900" height="560" loading="lazy" decoding="async" />', `<img src="../${escapeHtml(post.image)}" alt="${escapeHtml(post.alt)}" width="900" height="560" loading="lazy" decoding="async" />`)
+    .replace('<img src="../assets/og-image.svg" alt="" width="900" height="560" loading="lazy" decoding="async" />', `<img src="../${escapeHtml(post.image)}" alt="${escapeHtml(post.alt)}" width="900" height="560" loading="lazy" decoding="async" />`)
     .replace('          <!-- ARTICLE_CONTENT -->', renderArticleContent(post) + renderFaqBlock(faq));
 
   await writeFile(new URL(post.path, root), page, 'utf8');
@@ -163,9 +193,9 @@ const blogIndex = `<!DOCTYPE html>
   <meta property="og:title" content="Conseils nettoyage professionnel à Avignon | GSC Copronet" />
   <meta property="og:description" content="Repères pratiques pour préparer vos demandes de nettoyage professionnel dans le Vaucluse." />
   <meta property="og:url" content="${domain}/conseils.html" />
-  <meta property="og:image" content="${domain}/assets/services-parallax.jpg" />
+  <meta property="og:image" content="${domain}/assets/og-image.svg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="styles.css?v=20260605-3" />
+  <link rel="stylesheet" href="styles.css?v=20260605-4" />
 </head>
 <body class="detail-page">
   <header class="nav is-scrolled" data-nav>
@@ -257,19 +287,24 @@ ${renderPostCards(posts)}
 
 await writeFile(new URL('conseils.html', root), blogIndex, 'utf8');
 
-const staticPages = [
-  'conseils.html',
-  'mentions-legales.html',
-  'confidentialite.html'
-];
+// Sitemap enrichi : lastmod (date du jour) + changefreq + priority
+const today = new Date().toISOString().slice(0, 10);
+const url = (loc, opts = {}) => {
+  const lastmod = opts.lastmod || today;
+  const changefreq = opts.changefreq || 'monthly';
+  const priority = opts.priority || '0.7';
+  return `  <url><loc>${loc}</loc><lastmod>${lastmod}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`;
+};
 
 const sitemap = [
   '<?xml version="1.0" encoding="UTF-8"?>',
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-  `  <url><loc>${domain}/</loc></url>`,
-  ...staticPages.map(path => `  <url><loc>${domain}/${path}</loc></url>`),
-  ...posts.map(post => `  <url><loc>${domain}/${post.path}</loc></url>`),
-  ...Object.values(routes).map(route => `  <url><loc>${domain}/${route.path}</loc></url>`),
+  url(`${domain}/`, { changefreq: 'weekly', priority: '1.0' }),
+  url(`${domain}/conseils.html`, { changefreq: 'weekly', priority: '0.8' }),
+  url(`${domain}/mentions-legales.html`, { changefreq: 'yearly', priority: '0.3' }),
+  url(`${domain}/confidentialite.html`, { changefreq: 'yearly', priority: '0.3' }),
+  ...posts.map(post => url(`${domain}/${post.path}`, { lastmod: post.date, changefreq: 'monthly', priority: '0.7' })),
+  ...Object.values(routes).map(route => url(`${domain}/${route.path}`, { changefreq: 'monthly', priority: '0.8' })),
   '</urlset>',
   ''
 ].join('\n');

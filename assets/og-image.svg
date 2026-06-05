@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="GSC Copronet — Entreprise de nettoyage professionnel à Avignon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0E2A20"/>
+      <stop offset="100%" stop-color="#16382B"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.85" cy="0.15" r="0.6">
+      <stop offset="0%" stop-color="#2F6E54" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0E2A20" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Logo GSC -->
+  <g transform="translate(72, 88)">
+    <path d="M6 44 C54 56 116 53 152 12 C124 35 70 43 6 44 Z" fill="#F4C20E" transform="scale(1.4)"/>
+    <text x="0" y="52" font-family="'Inter Tight', 'Helvetica Neue', Arial, sans-serif" font-size="56" font-weight="800" letter-spacing="-3.5" fill="#FFFFFF">GSC</text>
+    <text x="220" y="52" font-family="'Inter Tight', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="500" letter-spacing="-1" fill="#F3F7F4">Copronet</text>
+  </g>
+
+  <!-- Eyebrow -->
+  <text x="72" y="310" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="500" letter-spacing="3" fill="#9FB7AC">AVIGNON · VAUCLUSE · DEPUIS 1980</text>
+
+  <!-- Title -->
+  <text x="72" y="390" font-family="'Inter Tight', 'Helvetica Neue', Arial, sans-serif" font-size="76" font-weight="600" letter-spacing="-2.5" fill="#FFFFFF">Entreprise de nettoyage</text>
+  <text x="72" y="470" font-family="'Inter Tight', 'Helvetica Neue', Arial, sans-serif" font-size="76" font-weight="600" letter-spacing="-2.5" fill="#FFFFFF">professionnel <tspan fill="#5AB78D" font-style="italic">à Avignon</tspan>.</text>
+
+  <!-- Sub -->
+  <text x="72" y="545" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="400" fill="#9FB7AC">Nettoyage médical · industriel · fin de chantier · vitrerie · entretien régulier</text>
+
+  <!-- Bottom right badges -->
+  <g transform="translate(960, 558)" font-family="'Inter', sans-serif" font-size="15" font-weight="500" fill="#F3F7F4">
+    <rect x="-5" y="-26" width="170" height="38" rx="19" fill="none" stroke="#234236" stroke-width="1.5"/>
+    <text x="80" y="0" text-anchor="middle">QUALIPROPRE · FEP</text>
+  </g>
+</svg>
