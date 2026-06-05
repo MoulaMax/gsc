@@ -342,6 +342,128 @@ window.GSC_BLOG_POSTS = [
     ]
   },
   {
+    slug: 'cout-vitrerie-hauteur-avignon',
+    path: 'conseils/cout-vitrerie-hauteur-avignon.html',
+    title: 'Quel coût prévoir pour la vitrerie en hauteur à Avignon ?',
+    description: 'Hauteur d’accès, surface vitrée, contrainte de circulation : les paramètres qui font varier un devis de vitrerie professionnelle dans le Vaucluse.',
+    h1: 'Vitrerie en hauteur : ce qui fait varier un devis',
+    category: 'Vitrerie',
+    date: '2026-06-05',
+    readingTime: '5 min',
+    image: 'assets/services/vitrerie.jpg',
+    alt: 'Lavage d’une façade vitrée en hauteur',
+    excerpt: 'L’écart de prix entre deux devis de vitrerie en hauteur s’explique souvent par trois critères concrets — voici lesquels.',
+    sections: [
+      {
+        heading: 'La hauteur et le mode d’accès',
+        paragraphs: [
+          'Un nettoyage à 3 m avec une perche ne mobilise pas le même matériel ni le même temps qu’une intervention à 12 m sur nacelle. La hauteur conditionne le matériel à mobiliser et la qualification des agents.',
+          'Au-delà de 6 m, une nacelle ou un échafaudage devient souvent nécessaire ; au-delà de 10 m, des habilitations spécifiques (CACES, travail en hauteur) sont obligatoires côté prestataire.'
+        ]
+      },
+      {
+        heading: 'La surface vitrée et la fréquence',
+        paragraphs: [
+          'Le tarif au m² est dégressif selon la surface : nettoyer 200 m² de vitrage n’est pas proportionnellement deux fois plus cher que 100 m².',
+          'La fréquence change aussi la donne : un passage annuel demande plus de temps qu’un passage bi-annuel, car la salissure s’est davantage incrustée. Deux passages par an coûtent souvent moins cher au total qu’un seul passage.'
+        ]
+      },
+      {
+        heading: 'L’environnement et les contraintes',
+        paragraphs: [
+          'Présence du public, circulation à interrompre, accès véhicules limités, fenêtres ouvrantes ou fixes, encadrements en bois exigeant un essuyage particulier : ces détails peuvent doubler le temps d’intervention.',
+          'Une visite préalable du site permet de chiffrer juste. Méfiez-vous des devis « au m² » établis sans visite : ils sont quasi systématiquement révisés à la hausse en cours d’intervention.'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'changer-entreprise-nettoyage-en-douceur',
+    path: 'conseils/changer-entreprise-nettoyage-en-douceur.html',
+    title: 'Comment changer d’entreprise de nettoyage sans tout bouleverser ?',
+    description: 'Préavis, transfert de personnel, période de chevauchement, état des lieux : les étapes pour changer de prestataire de nettoyage en limitant les ruptures de service.',
+    h1: 'Changer d’entreprise de nettoyage en douceur',
+    category: 'Gestion du contrat',
+    date: '2026-06-05',
+    readingTime: '6 min',
+    image: 'assets/services/bureaux-tertiaire.jpg',
+    alt: 'Transition entre deux prestataires de nettoyage dans des bureaux',
+    excerpt: 'Changer de prestataire ne devrait pas se traduire par une baisse de qualité ou des conflits sociaux. Voici une méthode éprouvée.',
+    sections: [
+      {
+        heading: 'Anticiper le préavis du contrat actuel',
+        paragraphs: [
+          'La majorité des contrats de nettoyage prévoient un préavis de 1 à 3 mois. Relisez la clause de résiliation avant d’engager toute démarche : forme de la notification (LRAR souvent), date d’effet, indemnités éventuelles.',
+          'Notifier trop tard, c’est se retrouver coincé un trimestre de plus.'
+        ]
+      },
+      {
+        heading: 'Vérifier l’article 7 de la convention collective',
+        paragraphs: [
+          'En France, la convention collective des entreprises de propreté impose dans la plupart des cas le transfert du contrat de travail des agents affectés à votre site vers le nouveau prestataire. Cela limite les ruptures sociales et préserve la continuité.',
+          'Ce transfert demande un échange documenté entre l’ancien et le nouveau prestataire : liste des agents, ancienneté, qualifications, équipements remis.'
+        ]
+      },
+      {
+        heading: 'Prévoir une période de chevauchement',
+        paragraphs: [
+          'Une à deux semaines pendant lesquelles l’équipe sortante accompagne la nouvelle équipe sur site permettent de transmettre la connaissance terrain : codes d’accès, lieux de stockage, points d’attention spécifiques.',
+          'Cet investissement initial est rentable : la qualité reste constante dès le jour J du nouveau contrat.'
+        ]
+      },
+      {
+        heading: 'Cadrer un état des lieux d’entrée',
+        paragraphs: [
+          'Visite contradictoire avec le nouveau prestataire pour photographier l’état des locaux à la prise de fonction. C’est utile en cas de litige ultérieur et cela cadre les attentes de qualité dès le départ.',
+          'Quelques minutes de prise de notes au début évitent des semaines de discussions par la suite.'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'haccp-boulangerie-patisserie-avignon',
+    path: 'conseils/haccp-boulangerie-patisserie-avignon.html',
+    title: 'HACCP en boulangerie-pâtisserie : quelles obligations de nettoyage ?',
+    description: 'Plan de nettoyage, points sensibles, fréquences et traçabilité : ce qu’impose la méthode HACCP dans une boulangerie-pâtisserie en France.',
+    h1: 'HACCP en boulangerie-pâtisserie : les obligations concrètes',
+    category: 'HACCP',
+    date: '2026-06-05',
+    readingTime: '5 min',
+    image: 'assets/services/milieu-alimentaire.jpg',
+    alt: 'Plan de travail propre dans un fournil professionnel',
+    excerpt: 'La méthode HACCP ne se résume pas à un classeur dans l’arrière-boutique : voici ce qu’elle implique concrètement côté nettoyage.',
+    sections: [
+      {
+        heading: 'Le plan de nettoyage écrit',
+        paragraphs: [
+          'Chaque zone (fournil, laboratoire, vitrines, sanitaires, arrière-boutique) doit avoir un protocole écrit précisant le quoi, le comment, le quand et le qui — produit utilisé, dilution, temps de contact, fréquence.',
+          'Ce document est demandé en cas de contrôle DDPP / Services vétérinaires. Il n’a pas besoin d’être complexe ; il doit être réaliste et appliqué.'
+        ]
+      },
+      {
+        heading: 'Les points sensibles à surveiller',
+        paragraphs: [
+          'Plans de travail en contact avec la pâte, pétrins, balances, vitrines réfrigérées, tranche-pain, sols (surtout autour des points d’eau), poignées de porte de chambre froide et zones de réception des matières premières.',
+          'Ces points concentrent les risques de contamination croisée : ils méritent une fréquence et un produit adaptés.'
+        ]
+      },
+      {
+        heading: 'La traçabilité',
+        paragraphs: [
+          'Un simple registre de nettoyage (papier ou tablette) avec date, zone, opération, agent et signature suffit dans la plupart des cas. Garder 6 à 12 mois d’historique permet de répondre à un contrôle.',
+          'Pour les opérations sensibles (désinfection après contact avec un produit cru, par exemple), la traçabilité est attendue à la journée.'
+        ]
+      },
+      {
+        heading: 'Externaliser ou rester en interne ?',
+        paragraphs: [
+          'Pour les fins de service quotidiennes, l’équipe interne reste en général la plus efficace : connaissance fine du lieu, rapidité.',
+          'Pour les opérations approfondies (dégraissage des hottes, désinfection technique, nettoyage des chambres froides), un prestataire spécialisé apporte le matériel, les produits agréés et la traçabilité documentaire.'
+        ]
+      }
+    ]
+  },
+  {
     slug: 'choisir-entreprise-nettoyage-industriel-avignon',
     path: 'conseils/choisir-entreprise-nettoyage-industriel-avignon.html',
     title: 'Comment choisir une entreprise de nettoyage industriel à Avignon ?',
@@ -477,6 +599,36 @@ window.GSC_BLOG_FAQ = {
     {
       q: 'Faut-il prévoir un budget vitrerie séparé ?',
       a: 'La vitrerie des entrées est souvent intégrée au contrat courant. Les façades vitrées, verrières et baies en hauteur sont plutôt facturées par passage planifié (1 à 2 fois par an, selon l’exposition).'
+    }
+  ],
+  'conseils/cout-vitrerie-hauteur-avignon.html': [
+    {
+      q: 'Faut-il une nacelle pour toute intervention en hauteur ?',
+      a: 'Non. Jusqu’à 4-6 m, des perches télescopiques équipées de raclettes professionnelles suffisent souvent. La nacelle devient nécessaire au-delà, ou pour les configurations difficiles (façades, verrières inclinées).'
+    },
+    {
+      q: 'Vaut-il mieux un passage annuel ou semestriel ?',
+      a: 'Deux passages par an coûtent en général moins cher au total qu’un seul passage annuel. La salissure étant moins incrustée, chaque passage est plus rapide, et le rendu visuel reste constant.'
+    }
+  ],
+  'conseils/changer-entreprise-nettoyage-en-douceur.html': [
+    {
+      q: 'Les agents actuels seront-ils licenciés si je change de prestataire ?',
+      a: 'Non, dans la grande majorité des cas. La convention collective des entreprises de propreté prévoit le transfert du contrat de travail des agents affectés à votre site vers le nouveau prestataire, sans rupture.'
+    },
+    {
+      q: 'Combien de temps prévoir pour une transition propre ?',
+      a: 'Comptez 1 à 3 mois entre la décision et la prise de fonction effective : préavis du contrat actuel, sélection du nouveau prestataire, transfert administratif des agents, période de chevauchement sur site (1 à 2 semaines recommandées).'
+    }
+  ],
+  'conseils/haccp-boulangerie-patisserie-avignon.html': [
+    {
+      q: 'Une petite boulangerie est-elle concernée par l’HACCP ?',
+      a: 'Oui, dès qu’il y a manipulation ou transformation de denrées alimentaires. L’ampleur du dispositif est simplement adaptée à la taille et à l’activité — un classeur de quelques pages peut suffire pour un petit point de vente.'
+    },
+    {
+      q: 'Qui contrôle l’application du HACCP en boulangerie ?',
+      a: 'En France, ce sont principalement la DDPP (Direction Départementale de la Protection des Populations) et, pour certaines activités, les Services vétérinaires. Les contrôles sont inopinés et concernent autant la propreté visuelle que la documentation (plan de nettoyage, traçabilité).'
     }
   ],
   'conseils/choisir-entreprise-nettoyage-industriel-avignon.html': [
