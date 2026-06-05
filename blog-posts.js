@@ -12,8 +12,8 @@ window.GSC_BLOG_POSTS = [
     category: 'Vie des locaux',
     date: '2026-06-04',
     readingTime: '6 min',
-    image: 'assets/services-parallax.jpg',
-    alt: 'Agent de propreté intervenant dans un environnement professionnel',
+    image: 'assets/conseils/pourquoi-faire-appel-nettoyage.jpg',
+    alt: 'Illustration issue de l’ancien blog GSC Copronet sur la propreté professionnelle',
     excerpt: 'Au-delà de la propreté visible, une entreprise spécialisée apporte méthode, continuité, conseil et maîtrise des coûts.',
     sections: [
       {
@@ -55,8 +55,8 @@ window.GSC_BLOG_POSTS = [
     category: 'Méthodes',
     date: '2026-06-04',
     readingTime: '5 min',
-    image: 'assets/services/milieu-medical.jpg',
-    alt: 'Environnement sensible nécessitant une méthode de nettoyage maîtrisée',
+    image: 'assets/conseils/pre-impregnation-h2.jpg',
+    alt: 'Illustration H2 issue de l’ancien blog sur la pré-imprégnation',
     excerpt: 'La pré-imprégnation limite les manipulations inutiles, sécurise les dosages et réduit la consommation de solution nettoyante.',
     sections: [
       {
@@ -98,8 +98,8 @@ window.GSC_BLOG_POSTS = [
     category: 'Métier & branche',
     date: '2026-06-04',
     readingTime: '4 min',
-    image: 'assets/certifications/fep.jpg',
-    alt: 'Logo de la FEP, Fédération des Entreprises de Propreté, d’Hygiène et Services Associés',
+    image: 'assets/conseils/fep-proprete.jpg',
+    alt: 'Logo FEP issu de l’ancien blog GSC Copronet',
     excerpt: 'La FEP représente la branche propreté, accompagne les entreprises et contribue à structurer les pratiques du secteur.',
     sections: [
       {
@@ -134,8 +134,8 @@ window.GSC_BLOG_POSTS = [
     category: 'Multiservices',
     date: '2026-06-04',
     readingTime: '5 min',
-    image: 'assets/services/reamenagement-bureaux.jpg',
-    alt: 'Réaménagement de bureaux et manutention de mobilier professionnel',
+    image: 'assets/conseils/multiservices-reamenagement-bureaux.jpg',
+    alt: 'Cartons et mobilier de bureau pendant un réaménagement',
     excerpt: 'Un site professionnel évolue sans cesse : mobilier, cloisons, éclairage, sols, petits travaux et transferts internes demandent de la coordination.',
     sections: [
       {
@@ -170,8 +170,8 @@ window.GSC_BLOG_POSTS = [
     category: 'Traitement des sols',
     date: '2026-06-04',
     readingTime: '5 min',
-    image: 'assets/services/bureaux-tertiaire-2.jpg',
-    alt: 'Sol de bureaux nécessitant un entretien professionnel adapté',
+    image: 'assets/conseils/nettoyage-moquette.jpg',
+    alt: 'Nettoyage professionnel d’une moquette avec machine spécialisée',
     excerpt: 'Les sols concentrent le passage, les traces et l’usure. Les traiter correctement prolonge leur durée de vie et améliore l’image du site.',
     sections: [
       {
@@ -206,8 +206,8 @@ window.GSC_BLOG_POSTS = [
     category: 'Remise en état',
     date: '2026-06-04',
     readingTime: '4 min',
-    image: 'assets/services/remise-en-etat.jpg',
-    alt: 'Local professionnel remis en état après intervention de nettoyage',
+    image: 'assets/conseils/preparer-fin-chantier.jpg',
+    alt: 'Site extérieur remis en état après intervention de nettoyage',
     excerpt: 'Accès, surface, matériaux, photos et planning : les éléments qui permettent d’obtenir une proposition plus précise et plus rapide.',
     sections: [
       {
@@ -242,8 +242,8 @@ window.GSC_BLOG_POSTS = [
     category: 'Copropriétés',
     date: '2026-06-04',
     readingTime: '5 min',
-    image: 'assets/services/parties-communes.jpg',
-    alt: 'Parties communes de copropriété entretenues régulièrement',
+    image: 'assets/conseils/copropriete-conteneurs.jpg',
+    alt: 'Nettoyage de conteneurs dans une copropriété',
     excerpt: 'La bonne fréquence dépend du nombre de bâtiments, des usages, du passage, des conteneurs et du niveau d’exigence du conseil syndical.',
     sections: [
       {
@@ -314,8 +314,8 @@ window.GSC_BLOG_POSTS = [
     category: 'Copropriétés',
     date: '2026-06-05',
     readingTime: '5 min',
-    image: 'assets/services/parties-communes.jpg',
-    alt: 'Hall d’immeuble entretenu par une équipe GSC Copronet',
+    image: 'assets/conseils/budget-copropriete-proprete.jpg',
+    alt: 'Illustration issue de l’ancien blog sur l’amélioration de la propreté',
     excerpt: 'Au-delà du prix au m², plusieurs paramètres concrets influencent le coût réel d’un contrat d’entretien d’immeuble.',
     sections: [
       {
@@ -350,8 +350,8 @@ window.GSC_BLOG_POSTS = [
     category: 'Industrie',
     date: '2026-06-05',
     readingTime: '6 min',
-    image: 'assets/services/ateliers-usines.jpg',
-    alt: 'Sol d’atelier industriel entretenu avec autolaveuse',
+    image: 'assets/conseils/nettoyage-industriel-service.jpg',
+    alt: 'Véhicule GSC Copronet pour interventions de nettoyage professionnel',
     excerpt: 'Au-delà du tarif, plusieurs signaux concrets distinguent un vrai professionnel du nettoyage industriel.',
     sections: [
       {
