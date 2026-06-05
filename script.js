@@ -28,20 +28,60 @@
   const menu   = document.querySelector('.nav__menu');
 
   if (toggle && menu) {
+    const mobileNav = window.matchMedia('(max-width: 1080px)');
+    let resizeFrame = 0;
+
+    const setMenuOpen = (open) => {
+      const nextOpen = Boolean(open && mobileNav.matches);
+      menu.classList.toggle('is-open', nextOpen);
+      toggle.classList.toggle('is-open', nextOpen);
+      toggle.setAttribute('aria-expanded', String(nextOpen));
+      toggle.setAttribute('aria-label', nextOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+      document.body.classList.toggle('is-menu-open', nextOpen);
+      document.body.style.overflow = '';
+    };
+
+    const closeMenu = () => setMenuOpen(false);
+    const syncMenuWithViewport = () => {
+      if (!mobileNav.matches || !menu.classList.contains('is-open')) {
+        closeMenu();
+      }
+    };
+    const syncMenuSoon = () => {
+      window.cancelAnimationFrame(resizeFrame);
+      resizeFrame = window.requestAnimationFrame(syncMenuWithViewport);
+    };
+
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('is-menu-open');
+    document.body.style.overflow = '';
+
     toggle.addEventListener('click', () => {
-      const open = menu.classList.toggle('is-open');
-      toggle.classList.toggle('is-open', open);
-      toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
-      document.body.style.overflow = open ? 'hidden' : '';
+      setMenuOpen(!menu.classList.contains('is-open'));
     });
 
     menu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        menu.classList.remove('is-open');
-        toggle.classList.remove('is-open');
-        document.body.style.overflow = '';
-      });
+      a.addEventListener('click', closeMenu);
     });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
+    });
+
+    if (mobileNav.addEventListener) {
+      mobileNav.addEventListener('change', syncMenuWithViewport);
+    } else {
+      mobileNav.addListener(syncMenuWithViewport);
+    }
+
+    window.addEventListener('resize', syncMenuSoon, { passive: true });
+    window.addEventListener('orientationchange', syncMenuSoon, { passive: true });
+    window.addEventListener('pageshow', syncMenuWithViewport);
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', syncMenuSoon, { passive: true });
+    }
+
+    syncMenuWithViewport();
   }
 
   /* ---------- Devis : estimation adaptée au besoin ---------- */
