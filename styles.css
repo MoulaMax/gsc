@@ -309,6 +309,11 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: block;
 }
 
+/* Logo agrandi (×2) dans l'en-tête uniquement — pas dans le footer */
+.nav .nav__logo { font-size: 36px; gap: 12px; }
+.nav .nav__logo-mark,
+.nav .nav__logo-mark svg { height: 60px; }
+
 .nav__logo-text { line-height: 1; }
 
 .nav__menu {
@@ -428,6 +433,12 @@ ul { margin: 0; padding: 0; list-style: none; }
   .nav__logo-mark,
   .nav__logo-mark svg { height: 26px; }
   .nav__logo-text { font-size: 16px; }
+
+  /* Header : logo agrandi conservé en mobile (un cran sous le desktop) */
+  .nav .nav__logo { gap: 10px; }
+  .nav .nav__logo-mark,
+  .nav .nav__logo-mark svg { height: 50px; }
+  .nav .nav__logo-text { font-size: 30px; }
   .nav__actions {
     flex-shrink: 0;
     margin-left: auto;

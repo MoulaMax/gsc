@@ -195,7 +195,7 @@ const blogIndex = `<!DOCTYPE html>
   <meta property="og:url" content="${domain}/conseils.html" />
   <meta property="og:image" content="${domain}/assets/og-image.svg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="styles.css?v=20260605-6" />
+  <link rel="stylesheet" href="styles.css?v=20260605-7" />
 </head>
 <body class="detail-page">
   <header class="nav is-scrolled" data-nav>
