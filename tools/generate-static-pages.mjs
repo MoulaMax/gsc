@@ -195,7 +195,7 @@ const blogIndex = `<!DOCTYPE html>
   <meta property="og:url" content="${domain}/conseils.html" />
   <meta property="og:image" content="${domain}/assets/og-image.svg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="styles.css?v=20260605-5" />
+  <link rel="stylesheet" href="styles.css?v=20260605-6" />
 </head>
 <body class="detail-page">
   <header class="nav is-scrolled" data-nav>
@@ -275,7 +275,7 @@ ${renderPostCards(posts)}
       <p class="footer__legal">SIRET 421 475 211 00056 · RCS Avignon</p>
     </div>
   </footer>
-  <script src="script.js?v=20260605-nav-2" defer></script>
+  <script src="script.js?v=20260605-3" defer></script>
   <aside class="cookie-notice" role="status" aria-label="Information cookies" data-cookie-notice>
     <span class="cookie-notice__icon" aria-hidden="true">🍪</span>
     <p>Ce site <strong>ne dépose aucun cookie</strong>. <a href="confidentialite.html">En savoir plus</a></p>

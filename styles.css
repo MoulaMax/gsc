@@ -298,10 +298,16 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: inline-flex;
   align-items: center;
   height: 30px;
+  flex: none;
   color: var(--blue);
 }
 
-.nav__logo-mark svg { height: 30px; width: auto; display: block; }
+.nav__logo-mark svg {
+  height: 30px;
+  width: auto;
+  aspect-ratio: 156 / 54;
+  display: block;
+}
 
 .nav__logo-text { line-height: 1; }
 
