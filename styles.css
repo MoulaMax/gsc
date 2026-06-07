@@ -310,17 +310,17 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 /* Logo agrandi dans l'en-tête uniquement — pas dans le footer.
-   Le mark "GSC" reste imposant (60px), mais le wordmark "Copronet"
-   est réduit pour ne pas empiéter sur le menu. */
-.nav .nav__logo { font-size: 26px; gap: 12px; }
+   Taille modérée (~1,3x) : le swoosh étant très large, on ne peut
+   pas trop monter sans empiéter sur le menu (nav limitée à 1240px). */
+.nav .nav__logo { font-size: 20px; gap: 11px; }
 .nav .nav__logo-mark,
-.nav .nav__logo-mark svg { height: 60px; }
+.nav .nav__logo-mark svg { height: 40px; }
 
 .nav__logo-text { line-height: 1; }
 
 .nav__menu {
   display: flex;
-  gap: 22px;
+  gap: 18px;
   align-items: center;
 }
 
@@ -436,11 +436,11 @@ ul { margin: 0; padding: 0; list-style: none; }
   .nav__logo-mark svg { height: 26px; }
   .nav__logo-text { font-size: 16px; }
 
-  /* Header : logo agrandi conservé en mobile (un cran sous le desktop) */
-  .nav .nav__logo { gap: 10px; font-size: 22px; }
+  /* Header : logo un cran sous le desktop */
+  .nav .nav__logo { gap: 10px; font-size: 18px; }
   .nav .nav__logo-mark,
-  .nav .nav__logo-mark svg { height: 50px; }
-  .nav .nav__logo-text { font-size: 22px; }
+  .nav .nav__logo-mark svg { height: 36px; }
+  .nav .nav__logo-text { font-size: 18px; }
   .nav__actions {
     flex-shrink: 0;
     margin-left: auto;
