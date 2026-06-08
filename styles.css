@@ -276,6 +276,11 @@ ul { margin: 0; padding: 0; list-style: none; }
   border-bottom-color: var(--border);
 }
 
+/* L'en-tête s'étend plus large que le contenu courant pour absorber
+   le logo agrandi + le menu complet (FAQ inclus) sans chevauchement,
+   en exploitant l'espace libre à gauche et à droite. */
+.nav .container { max-width: 1440px; }
+
 .nav__inner {
   display: flex;
   align-items: center;
@@ -310,16 +315,16 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 /* Logo agrandi dans l'en-tête uniquement — pas dans le footer.
-   Taille calibrée pour cohabiter avec 6 entrées de menu sans chevauchement. */
+   L'en-tête élargi (1440px) laisse la place au logo + 7 entrées de menu. */
 .nav .nav__logo { font-size: 19px; gap: 10px; }
 .nav .nav__logo-mark,
-.nav .nav__logo-mark svg { height: 36px; }
+.nav .nav__logo-mark svg { height: 40px; }
 
 .nav__logo-text { line-height: 1; }
 
 .nav__menu {
   display: flex;
-  gap: 14px;
+  gap: 13px;
   align-items: center;
 }
 
@@ -384,7 +389,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .nav__toggle.is-open span:nth-child(2) { opacity: 0; }
 .nav__toggle.is-open span:nth-child(3) { transform: translateY(-6.6px) rotate(-45deg); }
 
-@media (max-width: 1200px) {
+@media (max-width: 1320px) {
   body.is-menu-open { overflow: hidden; }
 
   .nav__menu { display: none; }
