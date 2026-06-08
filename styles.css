@@ -310,22 +310,21 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 /* Logo agrandi dans l'en-tête uniquement — pas dans le footer.
-   Taille modérée (~1,3x) : le swoosh étant très large, on ne peut
-   pas trop monter sans empiéter sur le menu (nav limitée à 1240px). */
-.nav .nav__logo { font-size: 20px; gap: 11px; }
+   Taille calibrée pour cohabiter avec 6 entrées de menu sans chevauchement. */
+.nav .nav__logo { font-size: 19px; gap: 10px; }
 .nav .nav__logo-mark,
-.nav .nav__logo-mark svg { height: 40px; }
+.nav .nav__logo-mark svg { height: 36px; }
 
 .nav__logo-text { line-height: 1; }
 
 .nav__menu {
   display: flex;
-  gap: 18px;
+  gap: 14px;
   align-items: center;
 }
 
 .nav__menu a {
-  font-size: 14.5px;
+  font-size: 13.5px;
   font-weight: 450;
   color: var(--ink);
   opacity: .72;

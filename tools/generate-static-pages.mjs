@@ -195,7 +195,7 @@ const blogIndex = `<!DOCTYPE html>
   <meta property="og:url" content="${domain}/conseils.html" />
   <meta property="og:image" content="${domain}/assets/og-image.svg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="styles.css?v=20260605-9" />
+  <link rel="stylesheet" href="styles.css?v=20260605-10" />
 </head>
 <body class="detail-page">
   <header class="nav is-scrolled" data-nav>
@@ -215,7 +215,6 @@ const blogIndex = `<!DOCTYPE html>
         <a href="index.html#multiservices">Multiservices</a>
         <a href="index.html#secteurs">Secteurs</a>
         <a href="index.html#qui-sommes-nous">Qui sommes-nous</a>
-        <a href="index.html#faq">FAQ</a>
         <a href="conseils.html">Conseils</a>
       </nav>
       <div class="nav__actions">
@@ -256,7 +255,6 @@ ${renderPostCards(posts)}
           <li><a href="index.html#multiservices">Multiservices</a></li>
           <li><a href="index.html#secteurs">Secteurs</a></li>
           <li><a href="index.html#qui-sommes-nous">Qui sommes-nous</a></li>
-          <li><a href="index.html#faq">FAQ</a>
         <a href="conseils.html">Conseils</a></li>
         </ul>
       </div>
